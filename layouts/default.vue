@@ -31,7 +31,6 @@ ul {
 
 @media (max-width: 1200px) {
   html {
- 
   background-color: #fff;
 }
 }

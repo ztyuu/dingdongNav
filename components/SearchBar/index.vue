@@ -3,7 +3,7 @@
     <div class="headline-content">
       <div class="tab-nav">
         <ul>
-          <li>百度</li>
+          <li class="activa">百度</li>
           <li>谷歌</li>
           <li>必应</li>
           <li>图片</li>
@@ -55,10 +55,15 @@ export default {
   padding: 0 10px;
   transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
+.activa {
+  color: #000;
+  border-bottom: 2px solid #444;
+}
 .tab-nav ul li:hover {
   color: #000;
   border-bottom: 2px solid #444;
 }
+
 .input-box {
   display: flex;
   align-items: center;
@@ -89,11 +94,10 @@ export default {
   background-color: #3c3c3c;
   text-align: center;
   cursor: pointer;
-  transition: all .3s;
+  transition: all 0.3s;
 }
 .input-box > div:hover {
   background-color: #000;
- 
 }
 @media (max-width: 1200px) {
   .container {
