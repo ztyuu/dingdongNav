@@ -3,6 +3,7 @@
     <div class="index">
       <SearchBar />
       <Link />
+      <Content />
     </div>
   </div>
 </template>
