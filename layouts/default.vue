@@ -28,6 +28,14 @@ html {
 ul {
   list-style: none;
 }
+a {
+  text-decoration: none;
+  color: #000;
+  transition: all .2s;
+}
+a:hover {
+  color: #00a1ee;
+}
 
 @media (max-width: 1200px) {
   html {

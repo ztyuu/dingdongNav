@@ -1,219 +1,107 @@
 <template>
   <div class="hot-list">
     <ul>
-      <li>
+      <li v-for="platform in listData"
+          :key='platform.name'>
         <div class="tab">
           <div>
-            <img src="https://file.ipadown.com/tophub/assets/images/media/s.weibo.com.png_50x50.png"
+            <img :src="platform.logoUrl"
                  alt="">
-            <span>微博</span>
+            <span>{{platform.name}}</span>
           </div>
           <div>
-            热搜榜单
+            {{platform.description}}
           </div>
         </div>
         <div class="info-content">
-          <div class="top-list">
-            <span>1</span>
-            <span>张子枫北电艺考第三张子枫北电艺考第三张子枫北电艺考第三张子枫北电艺考第三张子枫北电艺考第三</span>
-            <span>644.8万</span>
-          </div>
-          <div class="top-list">
-            <span>1</span>
-            <span>张子枫北电艺考第三张子枫北电艺考第三张子枫北电艺考第三张子枫北电艺考第三张子枫北电艺考第三</span>
-            <span>644.8万</span>
-          </div>
-
-          <div class="top-list">
-            <span>1</span>
-            <span>张子枫北电艺考第三张子枫北电艺考第三张子枫北电艺考第三张子枫北电艺考第三张子枫北电艺考第三</span>
-            <span>644.8万</span>
-          </div>
-          <div class="top-list">
-            <span>1</span>
-            <span>张子枫北电艺考第三张子枫北电艺考第三张子枫北电艺考第三张子枫北电艺考第三张子枫北电艺考第三</span>
-            <span>644.8万</span>
-          </div>
-          <div class="top-list">
-            <span>1</span>
-            <span>张子枫北电艺考第三张子枫北电艺考第三张子枫北电艺考第三张子枫北电艺考第三张子枫北电艺考第三</span>
-            <span>644.8万</span>
+          <div class="top-list"
+               v-for="(itme,index) in platform.list"
+               :key="itme.id">
+            <span :class="{'index-color': index+1 < 4 }">{{index+1}}</span>
+            <span> <a :href="itme.Url"
+                 target="_blank">{{itme.Title}}</a></span>
+            <span>{{itme.hotDesc|mapHeat}}</span>
           </div>
         </div>
-
-      </li>
-      <li>
-        <div class="tab">
-          <div>
-            <img src="https://file.ipadown.com/tophub/assets/images/media/s.weibo.com.png_50x50.png"
-                 alt="">
-            <span>微博</span>
-          </div>
-          <div>
-            热搜榜单
-          </div>
-        </div>
-        <div class="info-content">
-          <div class="top-list">
-            <span>1</span>
-            <span>张子枫北电艺考第三张子枫北电艺考第三张子枫北电艺考第三张子枫北电艺考第三张子枫北电艺考第三</span>
-            <span>644.8万</span>
-          </div>
-          <div class="top-list">
-            <span>1</span>
-            <span>张子枫北电艺考第三张子枫北电艺考第三张子枫北电艺考第三张子枫北电艺考第三张子枫北电艺考第三</span>
-            <span>644.8万</span>
-          </div>
-
-          <div class="top-list">
-            <span>1</span>
-            <span>张子枫北电艺考第三张子枫北电艺考第三张子枫北电艺考第三张子枫北电艺考第三张子枫北电艺考第三</span>
-            <span>644.8万</span>
-          </div>
-          <div class="top-list">
-            <span>1</span>
-            <span>张子枫北电艺考第三张子枫北电艺考第三张子枫北电艺考第三张子枫北电艺考第三张子枫北电艺考第三</span>
-            <span>644.8万</span>
-          </div>
-          <div class="top-list">
-            <span>1</span>
-            <span>张子枫北电艺考第三张子枫北电艺考第三张子枫北电艺考第三张子枫北电艺考第三张子枫北电艺考第三</span>
-            <span>644.8万</span>
-          </div>
-        </div>
-
-      </li>
-      <li>
-        <div class="tab">
-          <div>
-            <img src="https://file.ipadown.com/tophub/assets/images/media/s.weibo.com.png_50x50.png"
-                 alt="">
-            <span>微博</span>
-          </div>
-          <div>
-            热搜榜单
-          </div>
-        </div>
-        <div class="info-content">
-          <div class="top-list">
-            <span>1</span>
-            <span>张子枫北电艺考第三张子枫北电艺考第三张子枫北电艺考第三张子枫北电艺考第三张子枫北电艺考第三</span>
-            <span>644.8万</span>
-          </div>
-          <div class="top-list">
-            <span>1</span>
-            <span>张子枫北电艺考第三张子枫北电艺考第三张子枫北电艺考第三张子枫北电艺考第三张子枫北电艺考第三</span>
-            <span>644.8万</span>
-          </div>
-
-          <div class="top-list">
-            <span>1</span>
-            <span>张子枫北电艺考第三张子枫北电艺考第三张子枫北电艺考第三张子枫北电艺考第三张子枫北电艺考第三</span>
-            <span>644.8万</span>
-          </div>
-          <div class="top-list">
-            <span>1</span>
-            <span>张子枫北电艺考第三张子枫北电艺考第三张子枫北电艺考第三张子枫北电艺考第三张子枫北电艺考第三</span>
-            <span>644.8万</span>
-          </div>
-          <div class="top-list">
-            <span>1</span>
-            <span>张子枫北电艺考第三张子枫北电艺考第三张子枫北电艺考第三张子枫北电艺考第三张子枫北电艺考第三</span>
-            <span>644.8万</span>
-          </div>
-        </div>
-
-      </li>
-      <li>
-        <div class="tab">
-          <div>
-            <img src="https://file.ipadown.com/tophub/assets/images/media/s.weibo.com.png_50x50.png"
-                 alt="">
-            <span>微博</span>
-          </div>
-          <div>
-            热搜榜单
-          </div>
-        </div>
-        <div class="info-content">
-          <div class="top-list">
-            <span>1</span>
-            <span>张子枫北电艺考第三张子枫北电艺考第三张子枫北电艺考第三张子枫北电艺考第三张子枫北电艺考第三</span>
-            <span>644.8万</span>
-          </div>
-          <div class="top-list">
-            <span>1</span>
-            <span>张子枫北电艺考第三张子枫北电艺考第三张子枫北电艺考第三张子枫北电艺考第三张子枫北电艺考第三</span>
-            <span>644.8万</span>
-          </div>
-
-          <div class="top-list">
-            <span>1</span>
-            <span>张子枫北电艺考第三张子枫北电艺考第三张子枫北电艺考第三张子枫北电艺考第三张子枫北电艺考第三</span>
-            <span>644.8万</span>
-          </div>
-          <div class="top-list">
-            <span>1</span>
-            <span>张子枫北电艺考第三张子枫北电艺考第三张子枫北电艺考第三张子枫北电艺考第三张子枫北电艺考第三</span>
-            <span>644.8万</span>
-          </div>
-          <div class="top-list">
-            <span>1</span>
-            <span>张子枫北电艺考第三张子枫北电艺考第三张子枫北电艺考第三张子枫北电艺考第三张子枫北电艺考第三</span>
-            <span>644.8万</span>
-          </div>
-        </div>
-
-      </li>
-      <li>
-        <div class="tab">
-          <div>
-            <img src="https://file.ipadown.com/tophub/assets/images/media/s.weibo.com.png_50x50.png"
-                 alt="">
-            <span>微博</span>
-          </div>
-          <div>
-            热搜榜单
-          </div>
-        </div>
-        <div class="info-content">
-          <div class="top-list">
-            <span>1</span>
-            <span>张子枫北电艺考第三张子枫北电艺考第三张子枫北电艺考第三张子枫北电艺考第三张子枫北电艺考第三</span>
-            <span>644.8万</span>
-          </div>
-          <div class="top-list">
-            <span>1</span>
-            <span>张子枫北电艺考第三张子枫北电艺考第三张子枫北电艺考第三张子枫北电艺考第三张子枫北电艺考第三</span>
-            <span>644.8万</span>
-          </div>
-
-          <div class="top-list">
-            <span>1</span>
-            <span>张子枫北电艺考第三张子枫北电艺考第三张子枫北电艺考第三张子枫北电艺考第三张子枫北电艺考第三</span>
-            <span>644.8万</span>
-          </div>
-          <div class="top-list">
-            <span>1</span>
-            <span>张子枫北电艺考第三张子枫北电艺考第三张子枫北电艺考第三张子枫北电艺考第三张子枫北电艺考第三</span>
-            <span>644.8万</span>
-          </div>
-          <div class="top-list">
-            <span>1</span>
-            <span>张子枫北电艺考第三张子枫北电艺考第三张子枫北电艺考第三张子枫北电艺考第三张子枫北电艺考第三</span>
-            <span>644.8万</span>
-          </div>
-        </div>
-
       </li>
     </ul>
   </div>
 </template>
 
-<script>
-export default {
-
+<script lang='ts'>
+import { getHotTopipTop } from "@/api/hot-topic";
+import Vue from "vue";
+interface valueType {
+  split: any;
 }
+export default Vue.extend({
+  head() {
+    return {
+      title: "叮咚导航",
+    };
+  },
+  data() {
+    return {
+      listData: [
+        {
+          id: 58,
+          logoUrl:
+            "https://file.ipadown.com/tophub/assets/images/media/s.weibo.com.png_50x50.png",
+          name: "微博",
+          description: "热搜榜",
+          list: [],
+        },
+        {
+          id: 1,
+          logoUrl:
+            "https://file.ipadown.com/tophub/assets/images/media/zhihu.com.png_50x50.png",
+          name: "知乎",
+          description: "热榜",
+          list: [],
+        },
+        {
+          id: 83,
+          logoUrl:
+            "https://file.ipadown.com/tophub/assets/images/media/baidu.com.png_50x50.png",
+          name: "百度",
+          description: "实时热点",
+          list: [],
+        },
+        {
+          id: 11,
+          logoUrl:
+            "https://file.ipadown.com/tophub/assets/images/media/mp.weixin.qq.com.png_50x50.png",
+          name: "微信",
+          description: "24h热文榜",
+          list: [],
+        },
+      ],
+    };
+  },
+  filters: {
+    mapHeat: function (value: valueType) {
+      // try {
+      //   return Math.floor(value.split("热度")[0] / 10000) + "万";
+      // } catch (error) {
+      //   throw new Error(error);
+      // }
+    },
+  },
+  created() {
+    this.getData();
+  },
+  methods: {
+    /**
+     * @name getData 获取数据
+     */
+     getData() {
+      this.listData.map( async(e: any) => {
+        const result = await getHotTopipTop(e.id);
+        e.list = result.Data.data;
+      });
+    },
+  },
+});
 </script>
 
 <style scoped>
@@ -281,6 +169,9 @@ ul li {
   text-align: right;
   margin: 0 20px;
 }
+.index-color {
+  color: red;
+}
 .info-content::-webkit-scrollbar-track-piece {
   background-color: #fff;
   border-left: 1px solid rgba(0, 0, 0, 0);
@@ -293,13 +184,13 @@ ul li {
   border-radius: 0;
 }
 .info-content::-webkit-scrollbar-thumb {
-  background-color: #000;
+  background-color: #fff;
   background-clip: padding-box;
   border-radius: 0;
   min-height: 28px;
+  transition: all .3s;
 }
-.info-content::-webkit-scrollbar-thumb:hover {
+ul li:hover .info-content::-webkit-scrollbar-thumb {
   background-color: #000;
-  border-radius: 0;
 }
 </style>
