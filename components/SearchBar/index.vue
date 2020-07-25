@@ -3,23 +3,56 @@
     <div class="headline-content">
       <div class="tab-nav">
         <ul>
-          <li class="activa">百度</li>
-          <li>谷歌</li>
-          <li>必应</li>
-          <li>图片</li>
-          <li>种子</li>
-          <li>学术</li>
+          <li :class="{activa:item.isActiva}" v-for="(item,index) in list" :key="item.id" @click="changeSearchMode(index)">{{item.name}}</li>
         </ul>
       </div>
       <div class="input-box">
-        <input type="text"
-               placeholder="百度一下，你就知道。">
-        <div>搜索</div>
+        <input type="text" v-model="text" :placeholder="placeholder" @keyup.enter='handleSeacrch'>
+        <div @click='handleSeacrch'>搜索</div>
       </div>
     </div>
 
   </div>
 </template>
+<script lang='ts'>
+import { getHotTopipTop } from "@/api/hot-topic";
+import Vue from "vue";
+interface valueType {
+  split: any;
+}
+export default Vue.extend({
+  data() {
+    return {
+      list:[
+        {id:1,name:"百度",placeholder:"百度一下，你就知道！",isActiva:true,request:"https://www.baidu.com/s?word="},
+        {id:2,name:"谷歌",placeholder:"百度一下，你就知道！",isActiva:false,request:"https://www.baidu.com/s?word="},
+        {id:3,name:"必应",placeholder:"百度一下，你就知道！",isActiva:false,request:"https://www.baidu.com/s?word="},
+        {id:4,name:"图片",placeholder:"百度一下，你就知道！",isActiva:false,request:"https://www.baidu.com/s?word="},
+        {id:5,name:"种子",placeholder:"百度一下，你就知道！",isActiva:false,request:"https://www.baidu.com/s?word="},
+        {id:6,name:"学术",placeholder:"百度一下，你就知道！",isActiva:false,request:"https://www.baidu.com/s?word="},
+      ],
+      text: "",
+      placeholder: "百度一下，你就知道！",
+    };
+  },
+  created() {},
+  methods: {
+    /**
+     * @name changeSearchMode 改变搜索方式
+     * @param {Number} 当前项的索引
+     */
+    changeSearchMode(index:Number){
+      console.log(index);
+    },
+    /**
+     * @name handleSeacrch 处理搜索
+     */
+    handleSeacrch() {
+      
+    },
+  },
+});
+</script>
 <style scoped>
 .container {
   background: #fff;
@@ -98,7 +131,7 @@
   }
 }
 @media (max-width: 992px) {
-   .container {
+  .container {
     padding: 10px;
   }
   .input-box > div {
