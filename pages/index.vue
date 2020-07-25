@@ -21,7 +21,4 @@ export default Vue.extend({
 </script>
 
 <style scoped>
-.index {
-  padding: 40px 0;
-}
 </style>

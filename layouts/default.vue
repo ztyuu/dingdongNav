@@ -37,9 +37,9 @@ a:hover {
   color: #00a1ee;
 }
 
-@media (max-width: 1200px) {
+/* @media (max-width: 1200px) {
   html {
   background-color: #fff;
 }
-}
+} */
 </style>

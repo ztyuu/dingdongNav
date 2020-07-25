@@ -20,17 +20,10 @@
 
   </div>
 </template>
-
-<script>
-export default {
-
-}
-</script>
-
 <style scoped>
 .container {
   background: #fff;
-  width: 66%;
+  width: 100%;
   margin: 0 auto;
 }
 .headline-content {
@@ -100,8 +93,13 @@ export default {
   background-color: #000;
 }
 @media (max-width: 1200px) {
-  .container {
-    width: 90%;
+  .input-box > div {
+    margin-left: 0px;
+  }
+}
+@media (max-width: 992px) {
+   .container {
+    padding: 10px;
   }
   .input-box > div {
     margin-left: 0px;

@@ -94,8 +94,8 @@ export default Vue.extend({
     /**
      * @name getData 获取数据
      */
-     getData() {
-      this.listData.map( async(e: any) => {
+    getData() {
+      this.listData.map(async (e: any) => {
         const result = await getHotTopipTop(e.id);
         e.list = result.Data.data;
       });
@@ -106,7 +106,6 @@ export default Vue.extend({
 
 <style scoped>
 .hot-list {
-  background: #f6f6f6;
   width: 90%;
   margin: 0 auto;
 }
@@ -188,9 +187,43 @@ ul li {
   background-clip: padding-box;
   border-radius: 0;
   min-height: 28px;
-  transition: all .3s;
+  transition: all 0.3s;
 }
 ul li:hover .info-content::-webkit-scrollbar-thumb {
   background-color: #000;
+}
+
+@media (max-width: 1600px) {
+  ul li {
+    padding: 20px 0px;
+    width: 30%;
+    background-color: #fff;
+  }
+}
+@media (max-width: 1200px) {
+  ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-flow: row wrap;
+  }
+  ul li {
+    padding: 20px 0px;
+    width: 40%;
+    background-color: #fff;
+  }
+}
+@media (max-width: 992px) {
+  ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-flow: row wrap;
+  }
+  ul li {
+    padding: 20px 0px;
+    width: 98%;
+    background-color: #fff;
+  }
 }
 </style>

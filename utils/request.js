@@ -1,5 +1,8 @@
 import axios from 'axios'
 
+// interface 请求结果 {
+
+// }
 
 // create an axios instance
 const service = axios.create({

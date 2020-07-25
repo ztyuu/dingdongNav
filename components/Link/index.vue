@@ -21,13 +21,12 @@ export default {
 </script>
 <style scoped>
 .link {
-  background: #f6f6f6;
   width: 66%;
   margin: 0 auto;
   padding: 0 100px;
 }
 .tab {
-  padding:40px 100px;
+  padding: 40px 100px;
 }
 .tab ul {
   display: flex;
@@ -38,7 +37,7 @@ export default {
   padding: 6px 10px;
   color: #666;
   border-radius: 4px;
-  transition: all .3s;
+  transition: all 0.3s;
   cursor: pointer;
 }
 .activa {
@@ -46,5 +45,28 @@ export default {
 }
 .tab ul li:hover {
   background-color: #e1e1e1;
+}
+@media (max-width: 1200px) {
+  .link {
+    width: 90%;
+    padding: 0;
+  }
+  .tab ul li {
+    padding: 2px 4px;
+    color: #666;
+  }
+}
+@media (max-width: 992px) {
+  .link {
+    width: 90%;
+    padding: 0;
+  }
+  .tab {
+    padding: 20px 0px;
+  }
+  .tab ul li {
+    padding: 2px 4px;
+    color: #666;
+  }
 }
 </style>
