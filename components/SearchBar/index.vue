@@ -3,11 +3,17 @@
     <div class="headline-content">
       <div class="tab-nav">
         <ul>
-          <li :class="{activa:item.isActiva}" v-for="(item,index) in list" :key="item.id" @click="changeSearchMode(index)">{{item.name}}</li>
+          <li :class="{activa:item.isActiva}"
+              v-for="(item,index) in list"
+              :key="item.id"
+              @click="changeSearchMode(index)">{{item.name}}</li>
         </ul>
       </div>
       <div class="input-box">
-        <input type="text" v-model="text" :placeholder="placeholder" @keyup.enter='handleSeacrch'>
+        <input type="text"
+               v-model="text"
+               :placeholder="placeholder"
+               @keyup.enter='handleSeacrch'>
         <div @click='handleSeacrch'>搜索</div>
       </div>
     </div>
@@ -23,16 +29,53 @@ interface valueType {
 export default Vue.extend({
   data() {
     return {
-      list:[
-        {id:1,name:"百度",placeholder:"百度一下，你就知道！",isActiva:true,request:"https://www.baidu.com/s?word="},
-        {id:2,name:"谷歌",placeholder:"百度一下，你就知道！",isActiva:false,request:"https://www.baidu.com/s?word="},
-        {id:3,name:"必应",placeholder:"百度一下，你就知道！",isActiva:false,request:"https://www.baidu.com/s?word="},
-        {id:4,name:"图片",placeholder:"百度一下，你就知道！",isActiva:false,request:"https://www.baidu.com/s?word="},
-        {id:5,name:"种子",placeholder:"百度一下，你就知道！",isActiva:false,request:"https://www.baidu.com/s?word="},
-        {id:6,name:"学术",placeholder:"百度一下，你就知道！",isActiva:false,request:"https://www.baidu.com/s?word="},
+      list: [
+        {
+          id: 1,
+          name: "百度",
+          placeholder: "百度一下，你就知道！",
+          isActiva: true,
+          request: "https://www.baidu.com/s?word=",
+        },
+        {
+          id: 2,
+          name: "谷歌",
+          placeholder: "Google 搜索",
+          isActiva: false,
+          request: "https://www.baidu.com/s?word=",
+        },
+        {
+          id: 3,
+          name: "必应",
+          placeholder: "百度一下，你就知道！",
+          isActiva: false,
+          request: "https://www.baidu.com/s?word=",
+        },
+        {
+          id: 4,
+          name: "图片",
+          placeholder: "百度一下，你就知道！",
+          isActiva: false,
+          request: "https://www.baidu.com/s?word=",
+        },
+        {
+          id: 5,
+          name: "种子",
+          placeholder: "百度一下，你就知道！",
+          isActiva: false,
+          request: "https://www.baidu.com/s?word=",
+        },
+        {
+          id: 6,
+          name: "学术",
+          placeholder: "百度一下，你就知道！",
+          isActiva: false,
+          request: "https://www.baidu.com/s?word=",
+        },
       ],
       text: "",
       placeholder: "百度一下，你就知道！",
+      request: "https://www.baidu.com/s?word=",
     };
   },
   created() {},
@@ -41,14 +84,22 @@ export default Vue.extend({
      * @name changeSearchMode 改变搜索方式
      * @param {Number} 当前项的索引
      */
-    changeSearchMode(index:Number){
+    changeSearchMode(index: Number) {
       console.log(index);
+      this.list.map((e, i) => {
+        e.isActiva = false;
+        if (i === index) {
+          e.isActiva = true;
+          this.placeholder = e.placeholder;
+          this.request = e.request;
+        }
+      });
     },
     /**
      * @name handleSeacrch 处理搜索
      */
     handleSeacrch() {
-      
+      window.open(this.request + this.text)
     },
   },
 });
