@@ -3,17 +3,21 @@
     <div class="index">
       <SearchBar />
       <Link />
-      <Content />
+      <component is="HotTopic" />
     </div>
   </div>
 </template>
 
 <script>
+import HotTopic from '../components/HotTopic'
 export default {
-  head() {
+  head () {
     return {
       title: '叮咚导航'
     }
+  },
+  components:{
+    HotTopic
   }
 }
 </script>

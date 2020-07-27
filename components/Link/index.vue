@@ -2,13 +2,7 @@
   <div class="link">
     <div class="tab">
       <ul>
-        <li class="activa">实时热门</li>
-        <li>常用</li>
-        <li>娱乐</li>
-        <li>学习</li>
-        <li>生活</li>
-        <li>技术</li>
-        <li>设计</li>
+        <li :class="{activa:item.isActiva}" v-for="item in list" :key="item.id">{{item.name}}</li>
       </ul>
     </div>
   </div>
@@ -16,7 +10,19 @@
 
 <script>
 export default {
-
+  data(){
+    return {
+      list:[
+        {id:1,name:"实时热门",isActiva:true,component:'HotTopic'},
+        {id:2,name:"常用",isActiva:false,component:'HotTopic'},
+        {id:3,name:"娱乐",isActiva:false,component:'HotTopic'},
+        {id:4,name:"学习",isActiva:false,component:'HotTopic'},
+        {id:5,name:"生活",isActiva:false,component:'HotTopic'},
+        {id:6,name:"技术",isActiva:false,component:'HotTopic'},
+        {id:7,name:"设计",isActiva:false,component:'HotTopic'},
+      ]
+    }
+  }
 }
 </script>
 <style scoped>

@@ -19,14 +19,14 @@
                :key="itme.id">
             <span :class="{'index-color': index+1 < 4 }">{{index+1}}</span>
             <span> <a :href="itme.Url"
-                 target="_blank">{{itme.Title}}</a></span>
-            <span>{{itme.hotDesc|mapHeat}}</span>
+                 target="_blank" rel="noopener noreferrer">{{itme.Title}}</a></span>
+            <span></span>
           </div>
         </div>
       </li>
     </ul>
     <span class="fish"><a href="https://mo.fish/"
-         target="_blank">查看更多热榜到鱼塘热榜</a></span>
+         target="_blank" rel="noopener noreferrer">查看更多热榜到鱼塘热榜</a></span>
   </div>
 </template>
 
@@ -75,15 +75,6 @@ export default {
         },
       ],
     };
-  },
-  filters: {
-    mapHeat: function (value) {
-      // try {
-      //   return Math.floor(value.split("热度")[0] / 10000) + "万";
-      // } catch (error) {
-      //   throw new Error(error);
-      // }
-    },
   },
   created () {
     this.getData();
@@ -191,11 +182,15 @@ ul li:hover .info-content::-webkit-scrollbar-thumb {
   background-color: #000;
 }
 .fish {
+  padding-bottom: 20px;
   font-size: 14px;
   color: #666;
 }
 .fish > a {
   color: #666;
+}
+.fish > a:hover {
+  color: #00a1ee;
 }
 
 @media (max-width: 1600px) {
