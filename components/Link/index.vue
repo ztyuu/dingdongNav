@@ -2,7 +2,10 @@
   <div class="link">
     <div class="tab">
       <ul>
-        <li :class="{activa:item.isActiva}" v-for="item in list" :key="item.id">{{item.name}}</li>
+        <li :class="{activa:item.isActiva}"
+            v-for="item in list"
+            :key="item.id"
+            @click="handleNav(item.id)">{{item.name}}</li>
       </ul>
     </div>
   </div>
@@ -10,17 +13,31 @@
 
 <script>
 export default {
-  data(){
+  data () {
     return {
-      list:[
-        {id:1,name:"实时热门",isActiva:true,component:'HotTopic'},
-        {id:2,name:"常用",isActiva:false,component:'HotTopic'},
-        {id:3,name:"娱乐",isActiva:false,component:'HotTopic'},
-        {id:4,name:"学习",isActiva:false,component:'HotTopic'},
-        {id:5,name:"生活",isActiva:false,component:'HotTopic'},
-        {id:6,name:"技术",isActiva:false,component:'HotTopic'},
-        {id:7,name:"设计",isActiva:false,component:'HotTopic'},
+      list: [
+        { id: 1, name: "实时热门", isActiva: true, component: 'HotTopic' },
+        { id: 2, name: "常用", isActiva: false, component: 'Common' },
+        { id: 3, name: "娱乐", isActiva: false, component: 'Common' },
+        { id: 4, name: "学习", isActiva: false, component: 'Common' },
+        { id: 5, name: "生活", isActiva: false, component: 'Common' },
+        { id: 6, name: "技术", isActiva: false, component: 'Common' },
+        { id: 7, name: "设计", isActiva: false, component: 'Common' },
       ]
+    }
+  },
+  methods: {
+    /**
+     * @name handleNav 处理点击导航
+     */
+    handleNav (id) {
+      this.list.map(e => {
+        e.isActiva = false
+        if (e.id === id) {
+          this.$emit("handleChangeComponent",e)
+          e.isActiva = true
+        }
+      })
     }
   }
 }

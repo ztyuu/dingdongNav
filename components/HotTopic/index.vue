@@ -182,7 +182,7 @@ ul li:hover .info-content::-webkit-scrollbar-thumb {
   background-color: #000;
 }
 .fish {
-  padding-bottom: 20px;
+  padding-bottom: 40px;
   font-size: 14px;
   color: #666;
 }
