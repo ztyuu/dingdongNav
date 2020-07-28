@@ -1,89 +1,34 @@
 <template>
   <div class="common">
-    <div class="link-list">
-      <span>发现</span>
+    <div class="link-list"
+         v-for="item in linkData[label]"
+         :key="item.id">
+      <span>{{item.title}}</span>
       <ul>
-        <li>
-          <a href='https://nav.ztyuu.com'>煎蛋</a>
+        <li v-for="el in item.content"
+            :key="el.name">
+          <a :href='el.url'>{{el.name}}</a>
         </li>
-        <li>
-          <a href='https://nav.ztyuu.com'>煎蛋</a>
-        </li>
-        <li>
-          <a href='https://nav.ztyuu.com'>煎蛋</a>
-        </li>
-        <li>
-          <a href='https://nav.ztyuu.com'>煎蛋</a>
-        </li>
-        <li>
-          <a href='https://nav.ztyuu.com'>煎蛋</a>
-        </li>
-        <li>
-          <a href='https://nav.ztyuu.com'>煎蛋</a>
-        </li>
-        <li>
-          <a href='https://nav.ztyuu.com'>煎蛋</a>
-        </li>
-      </ul>
-    </div>
-    <div class="link-list">
-      <span>发现</span>
-      <ul>
-        <li>
-          <a href='https://nav.ztyuu.com'>煎蛋</a>
-        </li>
-        <li>
-          <a href='https://nav.ztyuu.com'>煎蛋</a>
-        </li>
-        <li>
-          <a href='https://nav.ztyuu.com'>煎蛋</a>
-        </li>
-        <li>
-          <a href='https://nav.ztyuu.com'>煎蛋</a>
-        </li>
-        <li>
-          <a href='https://nav.ztyuu.com'>煎蛋</a>
-        </li>
-        <li>
-          <a href='https://nav.ztyuu.com'>煎蛋</a>
-        </li>
-        <li>
-          <a href='https://nav.ztyuu.com'>煎蛋</a>
-        </li>
-      </ul>
-    </div>
-    <div class="link-list">
-      <span>发现</span>
-      <ul>
-        <li>
-          <a href='https://nav.ztyuu.com'>煎蛋</a>
-        </li>
-        <li>
-          <a href='https://nav.ztyuu.com'>煎蛋</a>
-        </li>
-        <li>
-          <a href='https://nav.ztyuu.com'>煎蛋</a>
-        </li>
-        <li>
-          <a href='https://nav.ztyuu.com'>煎蛋</a>
-        </li>
-        <li>
-          <a href='https://nav.ztyuu.com'>煎蛋</a>
-        </li>
-        <li>
-          <a href='https://nav.ztyuu.com'>煎蛋</a>
-        </li>
-        <li>
-          <a href='https://nav.ztyuu.com'>煎蛋</a>
-        </li>
+
       </ul>
     </div>
   </div>
 </template>
 
 <script>
+import linkData from '../../data/linkData.json'
 export default {
-
+  props: {
+    label: {
+      type: String,
+      default: 'inCommonUse'
+    }
+  },
+  data () {
+    return {
+      linkData
+    }
+  }
 }
 </script>
 <style scoped>

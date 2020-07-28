@@ -16,13 +16,13 @@ export default {
   data () {
     return {
       list: [
-        { id: 1, name: "实时热门", isActiva: true, component: 'HotTopic' },
-        { id: 2, name: "常用", isActiva: false, component: 'Common' },
-        { id: 3, name: "娱乐", isActiva: false, component: 'Common' },
-        { id: 4, name: "学习", isActiva: false, component: 'Common' },
-        { id: 5, name: "生活", isActiva: false, component: 'Common' },
-        { id: 6, name: "技术", isActiva: false, component: 'Common' },
-        { id: 7, name: "设计", isActiva: false, component: 'Common' },
+        { id: 1, name: "实时热门", isActiva: true, component: 'HotTopic', label: "" },
+        { id: 2, name: "常用", isActiva: false, component: 'Common', label: "inCommonUse" },
+        { id: 3, name: "娱乐", isActiva: false, component: 'Common', label: "recreation" },
+        { id: 4, name: "学习", isActiva: false, component: 'Common', label: "learn" },
+        { id: 5, name: "生活", isActiva: false, component: 'Common', label: "life" },
+        { id: 6, name: "技术", isActiva: false, component: 'Common', label: "technology" },
+        { id: 7, name: "设计", isActiva: false, component: 'Common', label: "design" },
       ]
     }
   },
@@ -34,7 +34,7 @@ export default {
       this.list.map(e => {
         e.isActiva = false
         if (e.id === id) {
-          this.$emit("handleChangeComponent",e)
+          this.$emit("handleChangeComponent", e)
           e.isActiva = true
         }
       })

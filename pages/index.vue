@@ -3,8 +3,10 @@
     <div class="index">
       <SearchBar />
       <Link @handleChangeComponent="handleChangeComponent" />
-      <transition mode="out-in" name="fade">
-        <component :is="componentName" />
+      <transition mode="out-in"
+                  name="fade">
+        <component :is="componentName"
+                   :label='label' />
       </transition>
     </div>
   </div>
@@ -21,19 +23,19 @@ export default {
   },
   data () {
     return {
+      // 标识
+      label: 'inCommonUse',
       componentName: "HotTopic"
     }
   },
   methods: {
-    sayHi: function () {
-      alert('Hi!')
-    },
     /**
      * @name handleChangeComponent 处理改变组件
      * @param {String} componentName 组件名字
      */
     handleChangeComponent (el) {
       this.componentName = el.component
+      this.label = el.label || 'inCommonUse'
     }
   },
   components: {

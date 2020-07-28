@@ -1,0 +1,104 @@
+{
+  "inCommonUse": [
+    {
+      "id": 2,
+      "title": "发现",
+      "content": [{ "url": "https://nav.ztyuu.com", "name": "煎蛋" }]
+    },
+    {
+      "id": 3,
+      "title": "视频",
+      "content": [{ "url": "https://nav.ztyuu.com", "name": "数字尾巴" }]
+    },
+    {
+      "id": 4,
+      "title": "设计",
+      "content": [{ "url": "https://nav.ztyuu.com", "name": "火车" }]
+    }
+  ],
+  "recreation": [
+    {
+      "id": 2,
+      "title": "发现",
+      "content": [{ "url": "https://nav.ztyuu.com", "name": "dsfa" }]
+    },
+    {
+      "id": 3,
+      "title": "视频",
+      "content": [{ "url": "https://nav.ztyuu.com", "name": "fasdf" }]
+    },
+    {
+      "id": 4,
+      "title": "设计",
+      "content": [{ "url": "https://nav.ztyuu.com", "name": "fasdfafd" }]
+    }
+  ],
+  "learn": [
+    {
+      "id": 2,
+      "title": "发现",
+      "content": [{ "url": "https://nav.ztyuu.com", "name": "fasdf" }]
+    },
+    {
+      "id": 3,
+      "title": "视频",
+      "content": [{ "url": "https://nav.ztyuu.com", "name": "数fasdf字尾巴" }]
+    },
+    {
+      "id": 4,
+      "title": "设计",
+      "content": [{ "url": "https://nav.ztyuu.com", "name": "fasd" }]
+    }
+  ],
+  "life": [
+    {
+      "id": 2,
+      "title": "发现",
+      "content": [{ "url": "https://nav.ztyuu.com", "name": "fasdf" }]
+    },
+    {
+      "id": 3,
+      "title": "视频",
+      "content": [{ "url": "https://nav.ztyuu.com", "name": "数字尾巴" }]
+    },
+    {
+      "id": 4,
+      "title": "设计",
+      "content": [{ "url": "https://nav.ztyuu.com", "name": "afsdf" }]
+    }
+  ],
+  "technology": [
+    {
+      "id": 2,
+      "title": "发现",
+      "content": [{ "url": "https://nav.ztyuu.com", "name": "asdf" }]
+    },
+    {
+      "id": 3,
+      "title": "视频",
+      "content": [{ "url": "https://nav.ztyuu.com", "name": "fasdf" }]
+    },
+    {
+      "id": 4,
+      "title": "设计",
+      "content": [{ "url": "https://nav.ztyuu.com", "name": "afsd" }]
+    }
+  ],
+  "design": [
+    {
+      "id": 2,
+      "title": "发现",
+      "content": [{ "url": "https://nav.ztyuu.com", "name": "asdf" }]
+    },
+    {
+      "id": 3,
+      "title": "视频",
+      "content": [{ "url": "https://nav.ztyuu.com", "name": "afsd" }]
+    },
+    {
+      "id": 4,
+      "title": "设计",
+      "content": [{ "url": "https://nav.ztyuu.com", "name": "火车" }]
+    }
+  ]
+}
