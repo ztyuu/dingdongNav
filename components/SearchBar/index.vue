@@ -11,6 +11,7 @@
       </div>
       <div class="input-box">
         <input type="text"
+               autofocus="autofocus"
                v-model="text"
                :placeholder="placeholder"
                @keyup.enter='handleSeacrch'>
@@ -21,8 +22,8 @@
   </div>
 </template>
 <script>
-export default{
-  data() {
+export default {
+  data () {
     return {
       list: [
         {
@@ -73,12 +74,12 @@ export default{
       request: "https://www.baidu.com/s?word=",
     };
   },
-  created() {},
+  created () { },
   methods: {
     /**
      * @name changeSearchMode 改变搜索方式
      */
-    changeSearchMode(index) {
+    changeSearchMode (index) {
       console.log(index);
       this.list.map((e, i) => {
         e.isActiva = false;
@@ -92,7 +93,7 @@ export default{
     /**
      * @name handleSeacrch 处理搜索
      */
-    handleSeacrch() {
+    handleSeacrch () {
       window.open(this.request + this.text)
     },
   },

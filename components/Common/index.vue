@@ -7,7 +7,7 @@
       <ul>
         <li v-for="el in item.content"
             :key="el.name">
-          <a :href='el.url'>{{el.name}}</a>
+          <a :href='el.url' target="_blank" rel="noopener noreferrer">{{el.name}}</a>
         </li>
 
       </ul>
