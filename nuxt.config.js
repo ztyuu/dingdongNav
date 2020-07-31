@@ -14,17 +14,26 @@ export default {
    ** See https://nuxtjs.org/api/configuration-head
    */
   head: {
-    title: process.env.npm_package_name || "",
+    title: "叮咚导航",
     meta: [
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
+      { name: "apple-mobile-web-app-title", content: "叮咚导航" },
+      { name: "apple-mobile-web-app-status-bar-style", content: "white" },
+      { name: "apple-mobile-web-app-capable", content: "yes" },
       {
         hid: "description",
         name: "description",
-        content: process.env.npm_package_description || ""
+        content: "叮咚导航"
       }
     ],
-    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }]
+    link: [
+      { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
+      { rel: "icon", type: "image/png", href: "/nuxt-icon.pn" },
+      { rel: "shortcut icon", href: "/nuxt-icon.png",type: "image/png", },
+      { rel: "apple-touch-icon", href: "/nuxt-icon.png" },
+      { rel: "apple-touch-startup-image", href: "/nuxt-icon.png" },
+    ]
   },
   /*
    ** Global CSS
@@ -34,9 +43,7 @@ export default {
    ** Plugins to load before mounting the App
    ** https://nuxtjs.org/guide/plugins
    */
-  plugins: [
-    { src: "~plugins/baidu.js", ssr: false }
-  ],
+  plugins: [{ src: "~plugins/baidu.js", ssr: false }],
   /*
    ** Auto import components
    ** See https://nuxtjs.org/api/configuration-components
