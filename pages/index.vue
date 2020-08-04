@@ -8,6 +8,7 @@
         <component :is="componentName"
                    :label='label' />
       </transition>
+      <Footer />
     </div>
   </div>
 </template>
