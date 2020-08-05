@@ -29,7 +29,7 @@ export default {
     ],
     link: [
       { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
-      { rel: "icon", type: "image/png", href: "/nuxt-icon.pn" },
+      { rel: "icon", type: "image/png", href: "/nuxt-icon.png" },
       { rel: "shortcut icon", href: "/nuxt-icon.png",type: "image/png", },
       { rel: "apple-touch-icon", href: "/nuxt-icon.png" },
       { rel: "apple-touch-startup-image", href: "/nuxt-icon.png" },
