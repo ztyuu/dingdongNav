@@ -11,6 +11,7 @@
       </div>
       <div class="input-box">
         <input type="text"
+               ref="searchBox"
                autofocus="autofocus"
                v-model="text"
                :placeholder="placeholder"
@@ -30,7 +31,7 @@ export default {
           id: 1,
           name: "百度",
           placeholder: "百度一下，你就知道！",
-          isActiva: true,
+          isActiva: false,
           request: "https://www.baidu.com/s?word=",
         },
         {
@@ -70,15 +71,20 @@ export default {
         },
       ],
       text: "",
-      placeholder: "百度一下，你就知道！",
-      request: "https://www.baidu.com/s?word=",
+      placeholder: "",
+      request: "",
     };
   },
-  created () {
+  mounted () {
     if (process.client) {
       const index = JSON.parse(localStorage.getItem('index'))
-      if (index) this.changeSearchMode(index)
+      console.log(index);
+      if (index === null) {
+        this.changeSearchMode(0)
+      } else {
+        this.changeSearchMode(index)
       }
+    }
   },
   methods: {
     /**
@@ -92,6 +98,7 @@ export default {
           e.isActiva = true;
           this.placeholder = e.placeholder;
           this.request = e.request;
+          this.$refs['searchBox'].focus()
           localStorage.setItem("index", JSON.stringify(index))
         }
       });

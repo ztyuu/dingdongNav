@@ -21,7 +21,7 @@ export default {
   props: {
     label: {
       type: String,
-      default: 'inCommonUse'
+      default: ''
     }
   },
   data () {

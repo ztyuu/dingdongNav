@@ -16,7 +16,7 @@ export default {
   data () {
     return {
       list: [
-        { id: 1, name: "实时热门", isActiva: true, component: 'HotTopic', label: "" },
+        { id: 1, name: "实时热门", isActiva: false, component: 'HotTopic', label: "" },
         { id: 2, name: "常用", isActiva: false, component: 'Common', label: "inCommonUse" },
         { id: 3, name: "娱乐", isActiva: false, component: 'Common', label: "recreation" },
         { id: 4, name: "学习", isActiva: false, component: 'Common', label: "learn" },
@@ -26,6 +26,16 @@ export default {
       ]
     }
   },
+  mounted () {
+    if (process.client) {
+      const id = JSON.parse(localStorage.getItem('link'))
+      if (id === null) {
+        this.handleNav(1)
+      } else {
+        this.handleNav(id)
+      }
+    }
+  },
   methods: {
     /**
      * @name handleNav 处理点击导航
@@ -33,9 +43,10 @@ export default {
     handleNav (id) {
       this.list.map(e => {
         e.isActiva = false
-        if (e.id === id) {
+        if (e.id === id && process.client) {
           this.$emit("handleChangeComponent", e)
           e.isActiva = true
+          localStorage.setItem("link", JSON.stringify(id))
         }
       })
     }

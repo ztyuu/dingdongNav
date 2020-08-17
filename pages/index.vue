@@ -26,7 +26,7 @@ export default {
     return {
       // 标识
       label: 'inCommonUse',
-      componentName: "HotTopic"
+      componentName: ""
     }
   },
   methods: {
