@@ -18,7 +18,7 @@
         <div @click='handleSeacrch'>搜索</div>
       </div>
     </div>
-    
+
   </div>
 </template>
 <script>
@@ -74,7 +74,12 @@ export default {
       request: "https://www.baidu.com/s?word=",
     };
   },
-  created () { },
+  created () {
+    if (process.client) {
+      const index = JSON.parse(localStorage.getItem('index'))
+      if (index) this.changeSearchMode(index)
+      }
+  },
   methods: {
     /**
      * @name changeSearchMode 改变搜索方式
@@ -83,10 +88,11 @@ export default {
       console.log(index);
       this.list.map((e, i) => {
         e.isActiva = false;
-        if (i === index) {
+        if (i === index && process.client) {
           e.isActiva = true;
           this.placeholder = e.placeholder;
           this.request = e.request;
+          localStorage.setItem("index", JSON.stringify(index))
         }
       });
     },
