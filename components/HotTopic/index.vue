@@ -87,6 +87,7 @@ export default {
       this.listData.map(async (e) => {
         const result = await getHotTopipTop(e.id);
         e.list = result.Data.data;
+        e.list.shift()
       });
     },
   },
