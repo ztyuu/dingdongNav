@@ -1,6 +1,8 @@
 <template>
   <div>
     <div class="index">
+      <el-button type="primary"
+                 @click="colorChange">切换主题</el-button>
       <SearchBar />
       <Link @handleChangeComponent="handleChangeComponent" />
       <transition mode="out-in"
@@ -16,6 +18,7 @@
 <script>
 import HotTopic from '../components/HotTopic'
 import Common from '../components/Common'
+import less from 'less'
 export default {
   head () {
     return {
@@ -30,6 +33,16 @@ export default {
     }
   },
   methods: {
+    colorChange () {
+      console.log(less);
+      less.modifyVars({
+        "@bg-color": "#f3f3f3",
+        "@theme-color": "#ffffff",
+        "@font-color": "#000000",
+        "@color-activa": "#252121",
+        "@link-activa": "#e1e1e1",
+      })
+    },
     /**
      * @name handleChangeComponent 处理改变组件
      * @param {String} componentName 组件名字
@@ -45,7 +58,7 @@ export default {
   }
 }
 </script>
-<style scoped>
+<style scoped lang="less">
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 0.5s;

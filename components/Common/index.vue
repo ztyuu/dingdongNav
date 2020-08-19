@@ -31,7 +31,7 @@ export default {
   }
 }
 </script>
-<style scoped>
+<style scoped lang="less">
 .common {
   width: 50%;
   margin: 0 auto;
@@ -43,7 +43,7 @@ export default {
 .link-list > span {
   width: 100px;
   padding: 6px 10px;
-  color: #000;
+  color: @font-color;
   font-weight: 500;
 }
 .link-list ul {
@@ -57,10 +57,10 @@ export default {
   border-radius: 4px;
 }
 .link-list ul li a {
-  color: #666;
+  color: @font-color;
 }
 .link-list ul li:hover {
-  background-color: #e1e1e1;
+  background-color: @link-activa;
 }
 @media (max-width: 1600px) {
   .common {

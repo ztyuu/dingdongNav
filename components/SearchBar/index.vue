@@ -112,9 +112,9 @@ export default {
   },
 };
 </script>
-<style scoped>
+<style scoped lang="less">
 .container {
-  background: #fff;
+  background: @theme-color;
   width: 100%;
   margin: 0 auto;
 }
@@ -130,7 +130,7 @@ export default {
   max-width: 470px;
   height: 34px;
   margin: 0 0 20px;
-  color: #666;
+  color: @font-color;
   border-bottom: 1px solid #e9e9e9;
 }
 .tab-nav ul li {
@@ -141,12 +141,12 @@ export default {
   transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 .activa {
-  color: #000;
-  border-bottom: 2px solid #444;
+  color: @font-color;
+  border-bottom: 2px solid @color-activa;
 }
 .tab-nav ul li:hover {
-  color: #000;
-  border-bottom: 2px solid #444;
+  color: @font-color;
+  border-bottom: 2px solid @color-activa;
 }
 
 .input-box {
@@ -175,14 +175,11 @@ export default {
   height: 46px;
   line-height: 46px;
   margin-left: 40px;
-  color: #fff;
-  background-color: #3c3c3c;
+  color: @theme-color;
+  background-color: @color-activa;
   text-align: center;
   cursor: pointer;
   transition: all 0.3s;
-}
-.input-box > div:hover {
-  background-color: #000;
 }
 @media (max-width: 1200px) {
   .input-box > div {

@@ -94,7 +94,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style scoped lang="less">
 .hot-list {
   width: 90%;
   margin: 0 auto;
@@ -108,7 +108,7 @@ ul {
 ul li {
   padding: 20px 0px;
   width: 24%;
-  background-color: #fff;
+  background-color: @theme-color;
   margin-bottom: 40px;
 }
 .tab {
@@ -117,6 +117,8 @@ ul li {
   display: flex;
   justify-items: center;
   justify-content: space-between;
+  color: @font-color;
+
 }
 .tab > div {
   font-size: 16px;
@@ -133,9 +135,9 @@ ul li {
   vertical-align: middle;
   font-size: 18px;
 }
-.tab > div:nth-of-type(2) {
-  border-bottom: 2px solid #8d8e8f;
-}
+// .tab > div:nth-of-type(2) {
+//   border-bottom: 2px solid #8d8e8f;
+// }
 .info-content {
   overflow-y: auto;
   height: 400px;
@@ -145,14 +147,14 @@ ul li {
   display: flex;
   align-items: baseline;
   justify-content: space-between;
-  color: #666;
+  color: @font-color;
 }
 .top-list > span:first-child {
   margin: 0 20px;
 }
 .top-list > span:nth-of-type(2) {
   flex: 1;
-  color: #000;
+  color: @font-color;
 }
 .top-list > span:last-child {
   text-align: right;
@@ -162,7 +164,7 @@ ul li {
   color: red;
 }
 .info-content::-webkit-scrollbar-track-piece {
-  background-color: #fff;
+  background-color: @theme-color;
   border-left: 1px solid rgba(0, 0, 0, 0);
 }
 .info-content::-webkit-scrollbar {
@@ -173,22 +175,22 @@ ul li {
   border-radius: 0;
 }
 .info-content::-webkit-scrollbar-thumb {
-  background-color: #fff;
+  background-color: @theme-color;
   background-clip: padding-box;
   border-radius: 0;
   min-height: 28px;
   transition: all 0.3s;
 }
 ul li:hover .info-content::-webkit-scrollbar-thumb {
-  background-color: #000;
+  background-color: @font-color;
 }
 .fish {
   padding-bottom: 40px;
   font-size: 14px;
-  color: #666;
+  color: @font-color;
 }
 .fish > a {
-  color: #666;
+  color: @font-color;
 }
 .fish > a:hover {
   color: #00a1ee;
@@ -198,7 +200,7 @@ ul li:hover .info-content::-webkit-scrollbar-thumb {
   ul li {
     padding: 20px 0px;
     width: 30%;
-    background-color: #fff;
+    background-color: @theme-color;
   }
 }
 @media (max-width: 1200px) {
@@ -211,7 +213,7 @@ ul li:hover .info-content::-webkit-scrollbar-thumb {
   ul li {
     padding: 20px 0px;
     width: 40%;
-    background-color: #fff;
+    background-color: @theme-color;
   }
 }
 @media (max-width: 992px) {
@@ -224,7 +226,7 @@ ul li:hover .info-content::-webkit-scrollbar-thumb {
   ul li {
     padding: 20px 0px;
     width: 98%;
-    background-color: #fff;
+    background-color: @theme-color;
   }
 }
 </style>

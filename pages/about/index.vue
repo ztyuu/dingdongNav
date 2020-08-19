@@ -32,12 +32,12 @@
   </div>
 </template>
 
-<style scoped>
+<style scoped lang="less">
 .about {
   width: 60%;
   margin: 20px auto;
-  box-shadow: 3px 2px 6px 0px #666;
-  background-color: #fff;
+  box-shadow: 3px 2px 6px 0px @font-color;
+  background-color: @theme-color;
   padding: 100px 20px;
 }
 h1 {

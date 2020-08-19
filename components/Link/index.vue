@@ -53,7 +53,7 @@ export default {
   }
 }
 </script>
-<style scoped>
+<style scoped lang="less">
 .link {
   width: 66%;
   margin: 0 auto;
@@ -69,16 +69,16 @@ export default {
 .tab ul li {
   display: inline-block;
   padding: 6px 10px;
-  color: #666;
+  color: @font-color;
   border-radius: 4px;
   transition: all 0.3s;
   cursor: pointer;
 }
 .activa {
-  background-color: #e1e1e1;
+  background-color: @link-activa;
 }
 .tab ul li:hover {
-  background-color: #e1e1e1;
+  background-color: @link-activa;
 }
 @media (max-width: 1200px) {
   .link {
@@ -87,7 +87,7 @@ export default {
   }
   .tab ul li {
     padding: 2px 4px;
-    color: #666;
+    color: @font-color;
   }
 }
 @media (max-width: 992px) {
@@ -100,7 +100,7 @@ export default {
   }
   .tab ul li {
     padding: 2px 4px;
-    color: #666;
+    color: @font-color;
   }
 }
 </style>

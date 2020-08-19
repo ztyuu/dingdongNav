@@ -30,20 +30,23 @@ export default {
     link: [
       { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
       { rel: "icon", type: "image/png", href: "/nuxt-icon.png" },
-      { rel: "shortcut icon", href: "/nuxt-icon.png",type: "image/png", },
+      { rel: "shortcut icon", href: "/nuxt-icon.png", type: "image/png" },
       { rel: "apple-touch-icon", href: "/nuxt-icon.png" },
-      { rel: "apple-touch-startup-image", href: "/nuxt-icon.png" },
+      { rel: "apple-touch-startup-image", href: "/nuxt-icon.png" }
     ]
   },
   /*
    ** Global CSS
    */
-  css: [],
+  css: ["element-ui/lib/theme-chalk/index.css"],
   /*
    ** Plugins to load before mounting the App
    ** https://nuxtjs.org/guide/plugins
    */
-  plugins: [{ src: "~plugins/baidu.js", ssr: false }],
+  plugins: [
+    { src: "~/plugins/element-ui", ssr: true },
+    { src: "~plugins/baidu.js", ssr: false }
+  ],
   /*
    ** Auto import components
    ** See https://nuxtjs.org/api/configuration-components
@@ -56,10 +59,28 @@ export default {
   /*
    ** Nuxt.js modules
    */
-  modules: [],
+  modules: ["@nuxtjs/style-resources"],
+  styleResources: {
+    less: '~/assets/less/base.less',
+    // sass: ... 需要什么配置什么，这里是全局的
+  },
   /*
    ** Build configuration
    ** See https://nuxtjs.org/api/configuration-build/
    */
-  build: {}
+  build: {
+    transpile: [/^element-ui/],
+    loaders: {
+      lessOptions: {
+        javascriptEnabled: true,
+        modifyVars: {
+          "@bg-color": "#666",
+          "@theme-color": "#ffffff",
+          "@font-color": "#000000",
+          "@color-activa": "#252121",
+          "@link-activa": "#e1e1e1"
+        }
+      }
+    }
+  }
 };

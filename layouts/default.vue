@@ -3,8 +3,7 @@
     <Nuxt />
   </div>
 </template>
-
-<style>
+<style lang="less">
 html {
   font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI",
     Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -15,7 +14,7 @@ html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
-  background-color: #eaeaea;
+  background-color: @bg-color;
 }
 
 *,
@@ -30,16 +29,10 @@ ul {
 }
 a {
   text-decoration: none;
-  color: #000;
-  transition: all .2s;
+  color: @font-color;
+  transition: all 0.2s;
 }
 a:hover {
   color: #00a1ee;
 }
-
-/* @media (max-width: 1200px) {
-  html {
-  background-color: #fff;
-}
-} */
 </style>

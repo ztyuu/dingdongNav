@@ -21,14 +21,13 @@ export default {
   }
 }
 </script>
-
-<style  scoped>
+<style lang="less" scoped>
 .footer {
   padding-top: 100px;
   padding-bottom: 20px;
   text-align: center;
   font-size: 14px;
-  color: #666;
+  color: @font-color;
   display: flex;
   justify-content: center;
   align-items: center;
