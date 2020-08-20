@@ -40,9 +40,6 @@ export default {
       { rel: "shortcut icon", href: "/nuxt-icon.png", type: "image/png" },
       { rel: "apple-touch-icon", href: "/nuxt-icon.png" },
       { rel: "apple-touch-startup-image", href: "/nuxt-icon.png" }
-    ],
-    script: [
-      { src: "https://cdn.bootcdn.net/ajax/libs/less.js/3.12.2/less.min.js" }
     ]
   },
   /*
