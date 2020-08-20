@@ -22,9 +22,16 @@ export default {
       { name: "apple-mobile-web-app-status-bar-style", content: "white" },
       { name: "apple-mobile-web-app-capable", content: "yes" },
       {
-        hid: "description",
+        vmid: "description",
         name: "description",
-        content: "叮咚导航"
+        content:
+          "叮咚导航是汇集全网优质网址及资源的中文上网导航。及时收录影视、音乐、小说、游戏等分类的网址和内容，让您的网络生活更简单精彩。上网，从叮咚导航开始。"
+      },
+      {
+        vmid: "keywords",
+        name: "keywords",
+        content:
+          "叮咚导航,导航网站，叮咚，今日热门，热搜，火爆，前端，网址，文章，咨询，热门，上网导航,网址大全,网址导航,上网导航,网址,导航,网址大全,活动,抽奖活动"
       }
     ],
     link: [
@@ -33,18 +40,22 @@ export default {
       { rel: "shortcut icon", href: "/nuxt-icon.png", type: "image/png" },
       { rel: "apple-touch-icon", href: "/nuxt-icon.png" },
       { rel: "apple-touch-startup-image", href: "/nuxt-icon.png" }
+    ],
+    script: [
+      { src: "https://cdn.bootcdn.net/ajax/libs/less.js/3.12.2/less.min.js" }
     ]
   },
   /*
    ** Global CSS
    */
-  css: ["element-ui/lib/theme-chalk/index.css"],
+  css: [{ src: "element-ui/lib/theme-chalk/index.css" }],
   /*
    ** Plugins to load before mounting the App
    ** https://nuxtjs.org/guide/plugins
    */
   plugins: [
     { src: "~/plugins/element-ui", ssr: true },
+    // { src: "~/plugins/less", ssr: true },
     { src: "~plugins/baidu.js", ssr: false }
   ],
   /*
@@ -61,26 +72,28 @@ export default {
    */
   modules: ["@nuxtjs/style-resources"],
   styleResources: {
-    less: '~/assets/less/base.less',
-    // sass: ... 需要什么配置什么，这里是全局的
+    less: "~/assets/less/base.less"
+    //   // sass: ... 需要什么配置什么，这里是全局的
+  },
+  less: {
+    lessOptions: {
+      modifyVars: { "@primary-color": "#1DA57A" },
+      javascriptEnabled: true
+    }
   },
   /*
    ** Build configuration
    ** See https://nuxtjs.org/api/configuration-build/
    */
   build: {
-    transpile: [/^element-ui/],
-    loaders: {
-      lessOptions: {
-        javascriptEnabled: true,
-        modifyVars: {
-          "@bg-color": "#666",
-          "@theme-color": "#ffffff",
-          "@font-color": "#000000",
-          "@color-activa": "#252121",
-          "@link-activa": "#e1e1e1"
-        }
-      }
-    }
+    transpile: [/^element-ui/]
+    // loaders: {
+    //   lessLoaderOptions: {
+    //     lessOptions: {
+    //       modifyVars: { "@primary-color": "#1DA57A" },
+    //       javascriptEnabled: true
+    //     }
+    //   }
+    // }
   }
 };
