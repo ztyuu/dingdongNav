@@ -1,3 +1,10 @@
+/*
+ * @Author: 左太宇
+ * @Date: 2020-07-27 14:22:09
+ * @LastEditTime: 2020-11-30 18:47:51
+ * @LastEditors: 左太宇
+ * @message:
+ */
 export default {
   /*
    ** Nuxt rendering mode
@@ -15,6 +22,9 @@ export default {
    */
   head: {
     title: "叮咚导航",
+    bodyAttrs: {
+      class: 'theme-white'
+    },
     meta: [
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },

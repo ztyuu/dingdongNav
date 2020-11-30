@@ -1,14 +1,18 @@
+<!--
+ * @Author: 左太宇
+ * @Date: 2020-08-05 10:03:04
+ * @LastEditTime: 2020-11-30 18:46:40
+ * @LastEditors: 左太宇
+ * @message:
+-->
 <template>
   <div>
     <div class="index">
-      <!-- <el-button type="primary"
-                 @click="colorChange">切换主题</el-button> -->
+      <!-- <el-button type="primary" @click="colorChange">切换主题</el-button> -->
       <SearchBar />
       <Link @handleChangeComponent="handleChangeComponent" />
-      <transition mode="out-in"
-                  name="fade">
-        <component :is="componentName"
-                   :label='label' />
+      <transition mode="out-in" name="fade">
+        <component :is="componentName" :label="label" />
       </transition>
       <Footer />
     </div>
@@ -16,47 +20,44 @@
 </template>
 
 <script>
-import HotTopic from '../components/HotTopic'
-import Common from '../components/Common'
+import HotTopic from "../components/HotTopic";
+import Common from "../components/Common";
 export default {
-  head () {
+  head() {
     return {
-      title: '叮咚导航',
-    }
+      title: "叮咚导航",
+    };
   },
-  data () {
+  data() {
     return {
       // 标识
-      label: 'inCommonUse',
-      componentName: ""
-    }
+      label: "inCommonUse",
+      componentName: "",
+    };
   },
   methods: {
-    colorChange () {
-      // window.less.modifyVars({
-      //   "@bg-color": "#f3f3f3",
-      //   "@theme-color": "#ffffff",
-      //   "@font-color": "#000000",
-      //   "@color-activa": "#252121",
-      //   "@link-activa": "#e1e1e1",
-      // }).then(()=>{
-      //   console.log("修改成功");
-      // })
+    colorChange() {
+      const test = document.body.getAttribute("class");
+      if (test === "theme-white") {
+        document.body.setAttribute("class", 'theme-black');
+      } else {
+        document.body.setAttribute("class", 'theme-white');
+      }
     },
     /**
      * @name handleChangeComponent 处理改变组件
      * @param {String} componentName 组件名字
      */
-    handleChangeComponent (el) {
-      this.componentName = el.component
-      this.label = el.label || 'inCommonUse'
-    }
+    handleChangeComponent(el) {
+      this.componentName = el.component;
+      this.label = el.label || "inCommonUse";
+    },
   },
   components: {
     HotTopic,
-    Common
-  }
-}
+    Common,
+  },
+};
 </script>
 <style scoped lang="less">
 .fade-enter-active,

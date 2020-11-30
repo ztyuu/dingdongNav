@@ -1,22 +1,43 @@
+
 // 背景颜色
-@bg-color: #f3f3f3;
+@theme-white-bg-color: #f3f3f3;
 // 主题默认颜色
-@theme-color: #ffffff;
+@theme-white-theme-color: #ffffff;
 // 字体颜色
-@font-color: #000;
+@theme-white-font-color: #000;
 // 选中状态时候
-@color-activa: #252121;
+@theme-white-color-activa: #252121;
 // 类别选中时候
-@link-activa: #e1e1e1;
+@theme-white-link-activa: #e1e1e1;
 
 // 背景颜色
-// @bg-color: #000000;
-// // 主题默认颜色
-// @theme-color: #141414;
-// // 字体颜色
-// @font-color: rgba(255,255,255,.85);
-// // 选中状态时候
-// @color-activa: #606266;
+@theme-black-bg-color: #000000;
+// 主题默认颜色
+@theme-black-theme-color: #141414;
+// 字体颜色
+@theme-black-font-color: rgba(255, 255, 255, 0.85);
+// 选中状态时候
+@theme-black-color-activa: #606266;
 
-// // 类别选中时候
-// @link-activa: #303133;
+// 类别选中时候
+@theme-black-link-activa: #303133;
+
+
+
+@themes: theme-white, theme-black;
+
+.setTheme() {
+  .loop(@i) when (@i < length(@themes)+1) {
+    @theme: extract(@themes, @i);
+    @bg-color:'@{theme}-bg-color';
+    @theme-color:'@{theme}-theme-color';
+    @font-color:'@{theme}-font-color';
+    @color-activa:'@{theme}-color-activa';
+    @link-activa:'@{theme}-link-activa';
+    body.@{theme} {
+      .theme(@@bg-color,@@theme-color,@@font-color,@@color-activa,@@link-activa);
+    }
+    .loop(@i+1);
+  }
+  .loop(1);
+}

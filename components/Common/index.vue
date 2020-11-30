@@ -32,6 +32,8 @@ export default {
 }
 </script>
 <style scoped lang="less">
+.theme(@bg-color,@theme-color,@font-color,@color-activa,@link-activa) {
+
 .common {
   width: 50%;
   margin: 0 auto;
@@ -80,4 +82,7 @@ export default {
     justify-content: start;
   }
 }
+}
+.setTheme();
+
 </style>

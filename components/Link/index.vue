@@ -54,6 +54,8 @@ export default {
 }
 </script>
 <style scoped lang="less">
+.theme(@bg-color,@theme-color,@font-color,@color-activa,@link-activa) {
+
 .link {
   width: 66%;
   margin: 0 auto;
@@ -103,4 +105,6 @@ export default {
     color: @font-color;
   }
 }
+}
+.setTheme();
 </style>
