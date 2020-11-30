@@ -1,3 +1,10 @@
+/*
+ * @Author: 左太宇
+ * @Date: 2020-07-27 14:27:27
+ * @LastEditTime: 2020-11-30 15:29:51
+ * @LastEditors: 左太宇
+ * @message:
+ */
 import axios from 'axios'
 
 // interface 请求结果 {
@@ -6,7 +13,8 @@ import axios from 'axios'
 
 // create an axios instance
 const service = axios.create({
-  baseURL: 'https://www.tophub.fun:8888/v2', // url = base url + request url
+  // baseURL: 'https://api.dingdong.ztyuu.com/api/v1', // url = base url + request url
+  baseURL: 'http://127.0.0.1:7001/api/v1', // url = base url + request url
   timeout: 15000, // 请求超时
 });
 
@@ -36,7 +44,7 @@ service.interceptors.response.use(
    */
   response => {
     const res = response.data;
-    if (res.Code !== 0) {
+    if (res.code !== 100) {
       return Promise.reject(new Error(res.Message || 'Error'));
     } else {
       return res;

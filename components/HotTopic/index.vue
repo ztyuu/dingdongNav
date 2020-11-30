@@ -18,15 +18,13 @@
                v-for="(itme,index) in platform.list"
                :key="itme.id">
             <span :class="{'index-color': index+1 < 4 }">{{index+1}}</span>
-            <span> <a :href="itme.Url"
-                 target="_blank" rel="noopener noreferrer">{{itme.Title}}</a></span>
+            <span> <a :href="itme.url"
+                 target="_blank" rel="noopener noreferrer">{{itme.title}}</a></span>
             <span></span>
           </div>
         </div>
       </li>
     </ul>
-    <span class="fish"><a href="https://mo.fish/"
-         target="_blank" rel="noopener noreferrer">查看更多热榜到鱼塘热榜</a></span>
   </div>
 </template>
 
@@ -42,7 +40,7 @@ export default {
     return {
       listData: [
         {
-          id: 58,
+          id: 1,
           logoUrl:
             "https://file.ipadown.com/tophub/assets/images/media/s.weibo.com.png_50x50.png",
           name: "微博",
@@ -50,7 +48,7 @@ export default {
           list: [],
         },
         {
-          id: 1,
+          id: 6,
           logoUrl:
             "https://file.ipadown.com/tophub/assets/images/media/zhihu.com.png_50x50.png",
           name: "知乎",
@@ -58,7 +56,7 @@ export default {
           list: [],
         },
         {
-          id: 83,
+          id: 2,
           logoUrl:
             "https://file.ipadown.com/tophub/assets/images/media/baidu.com.png_50x50.png",
           name: "百度",
@@ -66,11 +64,75 @@ export default {
           list: [],
         },
         {
-          id: 11,
+          id: 5,
           logoUrl:
             "https://file.ipadown.com/tophub/assets/images/media/mp.weixin.qq.com.png_50x50.png",
           name: "微信",
           description: "24h热文榜",
+          list: [],
+        },
+        {
+          id: 221,
+          logoUrl:
+            "https://file.ipadown.com/tophub/assets/images/media/iesdouyin.com.png_50x50.png",
+          name: "抖音",
+          description: "视频榜",
+          list: [],
+        },
+        {
+          id: 19,
+          logoUrl:
+            "https://file.ipadown.com/tophub/assets/images/media/bilibili.com.png_50x50.png",
+          name: "哔哩哔哩",
+          description: "24h热文榜",
+          list: [],
+        },
+        {
+          id: 26,
+          logoUrl:
+            "https://file.ipadown.com/tophub/assets/images/media/douban.com.png_50x50.png",
+          name: "豆瓣小组",
+          description: "讨论精选",
+          list: [],
+        },
+        {
+          id: 72,
+          logoUrl:
+            "https://file.ipadown.com/tophub/assets/images/media/jandan.net.png_50x50.png",
+          name: "煎蛋",
+          description: "24H热文",
+          list: [],
+        },
+        {
+          id: 11,
+          logoUrl:
+            "https://file.ipadown.com/tophub/assets/images/media/36kr.com.png_50x50.png",
+          name: "煎蛋",
+          description: "24H热榜",
+          list: [],
+        },
+        {
+          id: 137,
+          logoUrl:
+            "https://file.ipadown.com/tophub/assets/images/media/sspai.com.png_50x50.png",
+          name: "少数派",
+          description: "热门文章",
+          list: [],
+        },
+        {
+          id: 32,
+          logoUrl:
+            "https://file.ipadown.com/tophub/assets/images/media/huxiu.com.png_50x50.png",
+          name: "虎嗅网",
+          description: "热文",
+          list: [],
+        },
+        {
+          id: 119,
+          logoUrl:
+            "https://file.ipadown.com/tophub/assets/images/media/ithome.com.png_50x50.png",
+          name: "IT之家",
+          description: "日榜",
           list: [],
         },
       ],
@@ -86,8 +148,7 @@ export default {
     getData () {
       this.listData.map(async (e) => {
         const result = await getHotTopipTop(e.id);
-        e.list = result.Data.data;
-        e.list.shift()
+        e.list = result.data;
       });
     },
   },
