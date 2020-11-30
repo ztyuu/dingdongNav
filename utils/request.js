@@ -1,7 +1,7 @@
 /*
  * @Author: 左太宇
  * @Date: 2020-07-27 14:27:27
- * @LastEditTime: 2020-11-30 15:29:51
+ * @LastEditTime: 2020-11-30 17:17:50
  * @LastEditors: 左太宇
  * @message:
  */
@@ -13,8 +13,7 @@ import axios from 'axios'
 
 // create an axios instance
 const service = axios.create({
-  // baseURL: 'https://api.dingdong.ztyuu.com/api/v1', // url = base url + request url
-  baseURL: 'http://127.0.0.1:7001/api/v1', // url = base url + request url
+  baseURL: 'https://api.dingdong.ztyuu.com/api/v1', // url = base url + request url
   timeout: 15000, // 请求超时
 });
 
