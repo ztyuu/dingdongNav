@@ -1,14 +1,13 @@
 <!--
  * @Author: 左太宇
  * @Date: 2020-08-05 10:03:04
- * @LastEditTime: 2020-11-30 18:46:40
+ * @LastEditTime: 2020-12-01 12:02:37
  * @LastEditors: 左太宇
  * @message:
 -->
 <template>
   <div>
     <div class="index">
-      <!-- <el-button type="primary" @click="colorChange">切换主题</el-button> -->
       <SearchBar />
       <Link @handleChangeComponent="handleChangeComponent" />
       <transition mode="out-in" name="fade">
@@ -22,6 +21,7 @@
 <script>
 import HotTopic from "../components/HotTopic";
 import Common from "../components/Common";
+
 export default {
   head() {
     return {
@@ -36,14 +36,7 @@ export default {
     };
   },
   methods: {
-    colorChange() {
-      const test = document.body.getAttribute("class");
-      if (test === "theme-white") {
-        document.body.setAttribute("class", 'theme-black');
-      } else {
-        document.body.setAttribute("class", 'theme-white');
-      }
-    },
+
     /**
      * @name handleChangeComponent 处理改变组件
      * @param {String} componentName 组件名字
@@ -68,5 +61,20 @@ export default {
 .fade-leave-to {
   opacity: 0;
 }
+
+.theme(@bg-color,@theme-color,@font-color,@color-activa,@link-activa) {
+  .index {
+    background-color: @bg-color;
+  }
+  a {
+    text-decoration: none;
+    color: @font-color;
+    transition: all 0.2s;
+  }
+  a:hover {
+    color: #00a1ee;
+  }
+}
+.setTheme();
 </style>
 

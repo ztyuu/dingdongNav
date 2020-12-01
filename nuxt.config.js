@@ -1,7 +1,7 @@
 /*
  * @Author: 左太宇
  * @Date: 2020-07-27 14:22:09
- * @LastEditTime: 2020-11-30 18:47:51
+ * @LastEditTime: 2020-12-01 10:35:38
  * @LastEditors: 左太宇
  * @message:
  */
@@ -22,9 +22,9 @@ export default {
    */
   head: {
     title: "叮咚导航",
-    bodyAttrs: {
-      class: 'theme-white'
-    },
+    // bodyAttrs: {
+    //   class: "theme-white"
+    // },
     meta: [
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
@@ -55,15 +55,18 @@ export default {
   /*
    ** Global CSS
    */
-  css: [{ src: "element-ui/lib/theme-chalk/index.css" }],
+  css: [
+    { src: "element-ui/lib/theme-chalk/index.css" },
+    { src: "~/assets/iconfont/iconfont.css" }
+  ],
   /*
    ** Plugins to load before mounting the App
    ** https://nuxtjs.org/guide/plugins
    */
   plugins: [
     { src: "~/plugins/element-ui", ssr: true },
-    // { src: "~/plugins/less", ssr: true },
-    { src: "~plugins/baidu.js", ssr: false }
+    { src: "~/assets/iconfont/iconfont.js", ssr: false },
+    { src: "~/plugins/baidu.js", ssr: false }
   ],
   /*
    ** Auto import components

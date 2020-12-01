@@ -1,15 +1,26 @@
 <!--
  * @Author: 左太宇
  * @Date: 2020-07-27 14:22:09
- * @LastEditTime: 2020-11-30 18:45:29
+ * @LastEditTime: 2020-12-01 11:19:34
  * @LastEditors: 左太宇
  * @message:
 -->
 <template>
-  <div>
+  <div id="layout-container" :class="theme">
     <Nuxt />
   </div>
 </template>
+
+
+<script>
+import layoutMixin from "@/mixins/layout";
+export default {
+  mixins: [layoutMixin],
+};
+</script>
+
+
+
 <style lang="less">
 html {
   font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI",
@@ -34,7 +45,7 @@ ul {
   list-style: none;
 }
 .theme(@bg-color,@theme-color,@font-color,@color-activa,@link-activa) {
-  #__layout {
+  #layout-container {
     background-color: @bg-color;
   }
   a {

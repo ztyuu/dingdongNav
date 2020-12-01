@@ -112,7 +112,7 @@ export default {
           id: 11,
           logoUrl:
             "https://file.ipadown.com/tophub/assets/images/media/36kr.com.png_50x50.png",
-          name: "煎蛋",
+          name: "36氪",
           description: "24H热榜",
           list: [],
         },

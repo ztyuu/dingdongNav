@@ -21,6 +21,7 @@
     "@nuxtjs/style-resources": "1.0.0",
     "axios": "0.19.2",
     "element-ui": "2.13.2",
+    "js-cookie": "2.2.1",
     "less": "3.12.2",
     "less-loader": "6.2.0",
     "nuxt": "^2.13.0"

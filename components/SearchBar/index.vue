@@ -1,5 +1,13 @@
 <template>
   <div class="container">
+    <i
+      :class="[
+        'icon',
+        'iconfont',
+        isActivaTheme ? 'icon-taiyang' : 'icon-yueliang',
+      ]"
+      @click="changeTheme"
+    ></i>
     <div class="headline-content">
       <div class="tab-nav">
         <ul>
@@ -28,9 +36,11 @@
   </div>
 </template>
 <script>
+import Cookies from "js-cookie";
 export default {
   data() {
     return {
+      isActivaTheme: true,
       list: [
         {
           id: 1,
@@ -80,6 +90,18 @@ export default {
       request: "",
     };
   },
+  created() {
+    if (process.client) {
+      const theme = localStorage.getItem("theme");
+      if (theme === "theme-white") {
+        this.isActivaTheme = true;
+        this.$store.commit("setTheme", "theme-white");
+      } else {
+        this.$store.commit("setTheme", "theme-black");
+        this.isActivaTheme = false;
+      }
+    }
+  },
   mounted() {
     if (process.client) {
       const index = JSON.parse(localStorage.getItem("index"));
@@ -92,6 +114,22 @@ export default {
     }
   },
   methods: {
+    /**
+     * @name changeTheme 切换主题
+     */
+    changeTheme() {
+      const className = document
+        .querySelector("#layout-container")
+        .getAttribute("class");
+      console.log("className", className);
+      if (className === "theme-white") {
+        this.$store.commit("setTheme", "theme-black");
+        this.isActivaTheme = false;
+      } else {
+        this.$store.commit("setTheme", "theme-white");
+        this.isActivaTheme = true;
+      }
+    },
     /**
      * @name changeSearchMode 改变搜索方式
      */
@@ -123,6 +161,17 @@ export default {
     background: @theme-color;
     width: 100%;
     margin: 0 auto;
+    position: relative;
+  }
+  .icon {
+    position: absolute;
+    top: 4vh;
+    right: 10vw;
+    font-size: 32px;
+    cursor: pointer;
+  }
+  .icon-yueliang {
+    color: #fff;
   }
   .headline-content {
     max-width: 650px;
