@@ -1,12 +1,12 @@
 <!--
  * @Author: 左太宇
  * @Date: 2020-07-27 14:22:09
- * @LastEditTime: 2020-12-01 11:19:34
+ * @LastEditTime: 2020-12-01 12:37:44
  * @LastEditors: 左太宇
  * @message:
 -->
 <template>
-  <div id="layout-container" :class="theme">
+  <div id="layout-container" :class="theme" v-show="theme">
     <Nuxt />
   </div>
 </template>

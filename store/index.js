@@ -1,7 +1,7 @@
 /*
  * @Author: 左太宇
  * @Date: 2020-12-01 10:41:55
- * @LastEditTime: 2020-12-01 12:08:49
+ * @LastEditTime: 2020-12-01 12:32:40
  * @LastEditors: 左太宇
  * @message:
  */
@@ -9,7 +9,7 @@
 import Cookies from 'js-cookie'
 export const state = () => ({
   themes: ['theme-white', 'theme-black'],
-  theme: 'theme-white',
+  theme: '',
 })
 
 export const mutations = {
