@@ -1,13 +1,18 @@
 <template>
   <div class="container">
-    <i
-      :class="[
-        'icon',
-        'iconfont',
-        isActivaTheme ? 'icon-taiyang' : 'icon-yueliang',
-      ]"
-      @click="changeTheme"
-    ></i>
+    <div class="header">
+      <div></div>
+      <div>
+        <i
+          :class="[
+            'icon',
+            'iconfont',
+            isActivaTheme ? 'icon-taiyang' : 'icon-yueliang',
+          ]"
+          @click="changeTheme"
+        ></i>
+      </div>
+    </div>
     <div class="headline-content">
       <div class="tab-nav">
         <ul>
@@ -112,8 +117,26 @@ export default {
         this.changeSearchMode(index);
       }
     }
+    this.getLocation();
   },
   methods: {
+    getLocation() {
+      if ("geolocation" in navigator) {
+        navigator.geolocation.getCurrentPosition(this.showPosition);
+      } else {
+        console.log("该浏览器不支持获取地理位置。");
+      }
+    },
+    error() {
+      console.warn("ERROR(" + err.code + "): " + err.message);
+    },
+    showPosition(position) {
+      var crd = pos.coords;
+      console.log("Your current position is:");
+      console.log("Latitude : " + crd.latitude);
+      console.log("Longitude: " + crd.longitude);
+      console.log("More or less " + crd.accuracy + " meters.");
+    },
     /**
      * @name changeTheme 切换主题
      */
@@ -161,22 +184,30 @@ export default {
     background: @theme-color;
     width: 100%;
     margin: 0 auto;
-    position: relative;
   }
-  .icon {
-    position: absolute;
-    top: 4vh;
-    right: 10vw;
-    font-size: 32px;
-    cursor: pointer;
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    > div:nth-child(2) {
+      width: 100px;
+      height: 100px;
+      text-align: center;
+      line-height: 100px;
+      .icon {
+        font-size: 32px;
+        cursor: pointer;
+      }
+      .icon-yueliang {
+        color: #fff;
+      }
+    }
   }
-  .icon-yueliang {
-    color: #fff;
-  }
+
   .headline-content {
     max-width: 650px;
     margin: 0 auto;
-    padding: 60px 0;
+    padding-bottom: 60px;
   }
   .tab-nav ul {
     display: flex;
