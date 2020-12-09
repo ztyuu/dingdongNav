@@ -117,16 +117,8 @@ export default {
         this.changeSearchMode(index);
       }
     }
-    this.getLocation();
   },
   methods: {
-    getLocation() {
-      if ("geolocation" in navigator) {
-        navigator.geolocation.getCurrentPosition(this.showPosition);
-      } else {
-        console.log("该浏览器不支持获取地理位置。");
-      }
-    },
     error() {
       console.warn("ERROR(" + err.code + "): " + err.message);
     },

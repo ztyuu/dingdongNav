@@ -1,7 +1,7 @@
 <!--
  * @Author: 左太宇
  * @Date: 2020-08-04 18:14:20
- * @LastEditTime: 2020-11-30 18:37:36
+ * @LastEditTime: 2020-12-09 12:13:37
  * @LastEditors: 左太宇
  * @message:
 -->
@@ -34,7 +34,7 @@ export default {
 <style lang="less" scoped>
 .theme(@bg-color,@theme-color,@font-color,@color-activa,@link-activa) {
   .footer {
-    padding-top: 100px;
+    padding-top: 200px;
     padding-bottom: 20px;
     text-align: center;
     font-size: 14px;
