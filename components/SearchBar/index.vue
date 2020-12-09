@@ -73,21 +73,21 @@ export default {
           name: "图片",
           placeholder: "海量图片搜索",
           isActiva: false,
-          request: "https://www.google.com/search?tbm=isch&q=",
+          request: "https://image.baidu.com/search/index?tn=baiduimage&word=",
         },
         {
           id: 5,
           name: "种子",
           placeholder: "磁力链种子搜索",
           isActiva: false,
-          request: "https://torrentz2.eu/search?f=",
+          request: "https://xiongmao34.xyz/search?keyword=",
         },
         {
           id: 6,
           name: "学术",
           placeholder: "中英文文献搜索",
           isActiva: false,
-          request: "https://scholar.google.com/scholar?hl=zh-CN&q=",
+          request: "https://xueshu.baidu.com/s?wd=",
         },
       ],
       text: "",
@@ -119,16 +119,6 @@ export default {
     }
   },
   methods: {
-    error() {
-      console.warn("ERROR(" + err.code + "): " + err.message);
-    },
-    showPosition(position) {
-      var crd = pos.coords;
-      console.log("Your current position is:");
-      console.log("Latitude : " + crd.latitude);
-      console.log("Longitude: " + crd.longitude);
-      console.log("More or less " + crd.accuracy + " meters.");
-    },
     /**
      * @name changeTheme 切换主题
      */
