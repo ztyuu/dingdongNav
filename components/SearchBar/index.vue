@@ -80,7 +80,7 @@ export default {
           name: "种子",
           placeholder: "磁力链种子搜索",
           isActiva: false,
-          request: "https://xiongmao34.xyz/search?keyword=",
+          request: "https://torrentz2eu.org/index.html?q=",
         },
         {
           id: 6,
