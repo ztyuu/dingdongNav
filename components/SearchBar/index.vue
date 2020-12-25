@@ -11,6 +11,7 @@
           ]"
           @click="changeTheme"
         ></i>
+        <img v-if="show" @click="handleSd" src="../../assets/images/sd.png" alt="" />
       </div>
     </div>
     <div class="headline-content">
@@ -45,6 +46,7 @@ import Cookies from "js-cookie";
 export default {
   data() {
     return {
+      show:false,
       isActivaTheme: true,
       list: [
         {
@@ -96,6 +98,9 @@ export default {
     };
   },
   created() {
+     if (new Date().getTime() < 1608912000000) {
+      this.show = true
+    }
     if (process.client) {
       const theme = localStorage.getItem("theme");
       if (theme === "theme-white") {
@@ -119,6 +124,12 @@ export default {
     }
   },
   methods: {
+    handleSd() {
+      this.$notify({
+        message: "🎅  祝你圣诞快乐呀！～",
+        position:'top-left'
+      });
+    },
     /**
      * @name changeTheme 切换主题
      */
@@ -176,12 +187,20 @@ export default {
       height: 100px;
       text-align: center;
       line-height: 100px;
+      position: relative;
       .icon {
         font-size: 32px;
         cursor: pointer;
       }
       .icon-yueliang {
         color: #fff;
+      }
+      img {
+        position: absolute;
+        top: 50%;
+        left: 0%;
+        width: 50px;
+        transform: translate(-50%, -50%);
       }
     }
   }
