@@ -38,7 +38,7 @@ import { getHotTopipTop } from "../../api/hot-topic";
 export default {
   head() {
     return {
-      title: "叮咚导航",
+      title: "导航网站-咚咚宇宙",
     };
   },
   data() {

@@ -1,13 +1,12 @@
 <!--
  * @Author: 左太宇
  * @Date: 2020-08-05 10:03:04
- * @LastEditTime: 2020-12-25 09:52:44
+ * @LastEditTime: 2020-12-26 09:32:47
  * @LastEditors: 左太宇
  * @message:
 -->
 <template>
   <div>
-    <div v-if="show" id="snowMask"></div>
     <div class="index">
       <SearchBar />
       <Link @handleChangeComponent="handleChangeComponent" />
@@ -26,7 +25,7 @@ import Common from "../components/Common";
 export default {
   head() {
     return {
-      title: "叮咚导航",
+      title: "导航网站-咚咚宇宙",
     };
   },
   data() {
@@ -34,7 +33,6 @@ export default {
       // 标识
       label: "inCommonUse",
       componentName: "",
-      show:false,
     };
   },
   created(){
@@ -68,36 +66,9 @@ export default {
   opacity: 0;
 }
 
-@-webkit-keyframes snow {
-  0% {
-    background-position: 0 0, 0 0;
-  }
-  100% {
-    background-position: 500px 500px, 1000px 500px;
-  }
-}
-@keyframes snow {
-  0% {
-    background-position: 0 0, 0 0;
-  }
-  100% {
-    background-position: 500px 500px, 1000px 500px;
-  }
-}
+
 .container {
   box-shadow: 0 0 4px 3px rgba(0, 0, 0, 0.05);
-}
-#snowMask {
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background: url(../assets/images/snow1.png), url(../assets/images/snow1.png);
-  -webkit-animation: 10s snow linear infinite;
-  animation: 10s snow linear infinite;
-  pointer-events: none;
-  z-index: 9999;
 }
 
 .theme(@bg-color,@theme-color,@font-color,@color-activa,@link-activa) {

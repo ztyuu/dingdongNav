@@ -14,7 +14,8 @@
     "start": "nuxt start",
     "export": "nuxt export",
     "serve": "nuxt serve",
-    "generate": "nuxt generate"
+    "generate": "nuxt generate",
+    "deploy": "deploy prod"
   },
   "dependencies": {
     "@nuxtjs/axios": "5.12.1",

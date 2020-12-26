@@ -11,7 +11,6 @@
           ]"
           @click="changeTheme"
         ></i>
-        <img v-if="show" @click="handleSd" src="../../assets/images/sd.png" alt="" />
       </div>
     </div>
     <div class="headline-content">
@@ -46,7 +45,6 @@ import Cookies from "js-cookie";
 export default {
   data() {
     return {
-      show:false,
       isActivaTheme: true,
       list: [
         {
@@ -98,9 +96,6 @@ export default {
     };
   },
   created() {
-     if (new Date().getTime() < 1608912000000) {
-      this.show = true
-    }
     if (process.client) {
       const theme = localStorage.getItem("theme");
       if (theme === "theme-white") {
