@@ -1,7 +1,7 @@
 <!--
  * @Author: 左太宇
  * @Date: 2020-08-04 18:14:20
- * @LastEditTime: 2020-12-09 12:13:37
+ * @LastEditTime: 2020-12-26 18:18:51
  * @LastEditors: 左太宇
  * @message:
 -->
@@ -16,8 +16,8 @@
       @mouseenter="isShow = true"
       @mouseleave="isShow = false"
     >
-      <img v-show="isShow" src="../../static/dd.png" alt="公众号咚咚宇宙" />
-      <span>关于作者</span>
+      <!-- <img v-show="isShow" src="../../static/dd.png" alt="公众号咚咚宇宙" />
+      <span>关于作者</span> -->
     </div>
   </div>
 </template>
