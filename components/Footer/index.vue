@@ -1,24 +1,16 @@
 <!--
  * @Author: 左太宇
  * @Date: 2020-08-04 18:14:20
- * @LastEditTime: 2020-12-26 18:18:51
+ * @LastEditTime: 2020-12-27 19:12:31
  * @LastEditors: 左太宇
  * @message:
 -->
 <template>
   <div class="footer">
-    <span>© 2020</span>
-    <!-- <span>
-      <a href="/about">网站声明</a>
-    </span> -->
-    <div
-      class="author"
-      @mouseenter="isShow = true"
-      @mouseleave="isShow = false"
-    >
-      <!-- <img v-show="isShow" src="../../static/dd.png" alt="公众号咚咚宇宙" />
-      <span>关于作者</span> -->
-    </div>
+    <footer>
+      <div>© ZTYUU.COM,2017 - {{year}}</div>
+      <a href="https://beian.miit.gov.cn/#/">湘ICP备19023485号-1</a>
+    </footer>
   </div>
 </template>
 
@@ -26,39 +18,30 @@
 export default {
   data() {
     return {
-      isShow: false,
+      yaer: "",
     };
+  },
+  created() {
+    this.year = new Date().getFullYear();
   },
 };
 </script>
 <style lang="less" scoped>
 .theme(@bg-color,@theme-color,@font-color,@color-activa,@link-activa) {
-  .footer {
+  footer {
+    padding: 10px;
     padding-top: 200px;
-    padding-bottom: 20px;
-    text-align: center;
-    font-size: 14px;
-    color: @font-color;
     display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .author > span {
-    padding-left: 20px;
+    opacity: 0.35;
+    font-size: 12px;
+    justify-content: space-between;
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+    a:hover {
     color: #00a1ee;
-    cursor: pointer;
   }
-  .author > img {
-    position: fixed;
-    bottom: 60px;
-    width: 300px;
-    transform: translateX(-50%);
-    transition: 0.3s all;
-  }
-
-  a {
-    color: #00a1ee;
   }
 }
 .setTheme();
