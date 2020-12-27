@@ -1,7 +1,7 @@
 /*
  * @Author: 左太宇
  * @Date: 2020-07-27 14:22:09
- * @LastEditTime: 2020-12-26 12:17:41
+ * @LastEditTime: 2020-12-27 09:25:40
  * @LastEditors: 左太宇
  * @message:
  */
@@ -22,9 +22,6 @@ export default {
    */
   head: {
     title: "导航网站-咚咚宇宙",
-    // bodyAttrs: {
-    //   class: "theme-white"
-    // },
     meta: [
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
@@ -42,6 +39,14 @@ export default {
         name: "keywords",
         content:
           "导航网站-咚咚宇宙,导航网站，叮咚，今日热门，热搜，火爆，前端，网址，文章，咨询，热门，上网导航,网址大全,网址导航,上网导航,网址,导航,网址大全,活动,抽奖活动"
+      }
+    ],
+    script: [
+      {
+        // 谷歌广告代码
+        "data-ad-client": "ca-pub-5555974233935892",
+        async: 1,
+        src: "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
       }
     ],
     link: [
@@ -66,7 +71,8 @@ export default {
   plugins: [
     { src: "~/plugins/element-ui", ssr: true },
     { src: "~/assets/iconfont/iconfont.js", ssr: false },
-    { src: "~/plugins/baidu.js", ssr: false }
+    { src: "~/plugins/baidu.js", ssr: false },
+    { src: "~plugins/ga.js", mode: "client" }
   ],
   /*
    ** Auto import components
