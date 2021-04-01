@@ -21,24 +21,24 @@ export default {
    ** See https://nuxtjs.org/api/configuration-head
    */
   head: {
-    title: "导航网站-咚咚宇宙",
+    title: "叮咚导航-咚咚宇宙",
     meta: [
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { name: "apple-mobile-web-app-title", content: "导航网站-咚咚宇宙" },
+      { name: "apple-mobile-web-app-title", content: "叮咚导航 - 咚咚宇宙" },
       { name: "apple-mobile-web-app-status-bar-style", content: "white" },
       { name: "apple-mobile-web-app-capable", content: "yes" },
       {
         vmid: "description",
         name: "description",
         content:
-          "导航网站-咚咚宇宙是汇集全网优质网址及资源的中文上网导航。及时收录影视、音乐、小说、游戏等分类的网址和内容，让您的网络生活更简单精彩。上网，从导航网站-咚咚宇宙开始。"
+          "叮咚导航-咚咚宇宙是汇集全网优质网址及资源的中文上网导航。及时收录影视、音乐、小说、游戏等分类的网址和内容，让您的网络生活更简单精彩。上网，从叮咚导航-咚咚宇宙开始。"
       },
       {
         vmid: "keywords",
         name: "keywords",
         content:
-          "导航网站-咚咚宇宙,导航网站，叮咚，今日热门，热搜，火爆，前端，网址，文章，咨询，热门，上网导航,网址大全,网址导航,上网导航,网址,导航,网址大全,活动,抽奖活动"
+          "叮咚导航-咚咚宇宙,叮咚导航，叮咚，今日热门，热搜，火爆，前端，网址，文章，咨询，热门，上网导航,网址大全,网址导航,上网导航,网址,导航,网址大全,活动,抽奖活动"
       }
     ],
     script: [

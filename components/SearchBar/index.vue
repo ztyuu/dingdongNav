@@ -1,47 +1,39 @@
 <template>
   <div class="container">
     <div class="header">
-      <div></div>
+      <div @click="handleRefresh">
+        <i :class="[
+            'icon',
+            'iconfont',
+            'icon-shuaxin',
+            isActivaTheme ? 'icon-shuaxin' : 'icon-shuaxin-active',
+          ]"></i>
+      </div>
       <div>
-        <i
-          :class="[
+        <i :class="[
             'icon',
             'iconfont',
             isActivaTheme ? 'icon-taiyang' : 'icon-yueliang',
-          ]"
-          @click="changeTheme"
-        ></i>
+          ]" @click="changeTheme"></i>
       </div>
     </div>
     <div class="headline-content">
       <div class="tab-nav">
         <ul>
-          <li
-            :class="{ activa: item.isActiva }"
-            v-for="(item, index) in list"
-            :key="item.id"
-            @click="changeSearchMode(index)"
-          >
+          <li :class="{ activa: item.isActiva }" v-for="(item, index) in list" :key="item.id" @click="changeSearchMode(index)">
             {{ item.name }}
           </li>
         </ul>
       </div>
       <div class="input-box">
-        <input
-          type="text"
-          ref="searchBox"
-          autofocus="autofocus"
-          v-model="text"
-          :placeholder="placeholder"
-          @keyup.enter="handleSeacrch"
-        />
+        <input type="text" ref="searchBox" autofocus="autofocus" v-model="text" :placeholder="placeholder" @keyup.enter="handleSeacrch" />
         <div @click="handleSeacrch">搜索</div>
       </div>
     </div>
   </div>
 </template>
 <script>
-import Cookies from "js-cookie";
+import Cookies from 'js-cookie'
 export default {
   data() {
     return {
@@ -49,122 +41,130 @@ export default {
       list: [
         {
           id: 1,
-          name: "百度",
-          placeholder: "百度一下，你就知道！",
+          name: '百度',
+          placeholder: '百度一下，你就知道！',
           isActiva: false,
-          request: "https://www.baidu.com/s?word=",
+          request: 'https://www.baidu.com/s?word=',
         },
         {
           id: 2,
-          name: "谷歌",
-          placeholder: "Google 搜索",
+          name: '谷歌',
+          placeholder: 'Google 搜索',
           isActiva: false,
-          request: "https://www.google.com/search?q=",
+          request: 'https://www.google.com/search?q=',
         },
         {
           id: 3,
-          name: "必应",
-          placeholder: "微软Bing 搜索",
+          name: '必应',
+          placeholder: '微软Bing 搜索',
           isActiva: false,
-          request: "https://www.bing.com/search?q=",
+          request: 'https://www.bing.com/search?q=',
         },
         {
           id: 4,
-          name: "图片",
-          placeholder: "海量图片搜索",
+          name: '图片',
+          placeholder: '海量图片搜索',
           isActiva: false,
-          request: "https://image.baidu.com/search/index?tn=baiduimage&word=",
+          request: 'https://image.baidu.com/search/index?tn=baiduimage&word=',
         },
         {
           id: 5,
-          name: "种子",
-          placeholder: "磁力链种子搜索",
+          name: '种子',
+          placeholder: '磁力链种子搜索',
           isActiva: false,
-          request: "https://torrentz2eu.org/index.html?q=",
+          request: 'https://torrentz2eu.org/index.html?q=',
         },
         {
           id: 6,
-          name: "学术",
-          placeholder: "中英文文献搜索",
+          name: '学术',
+          placeholder: '中英文文献搜索',
           isActiva: false,
-          request: "https://xueshu.baidu.com/s?wd=",
+          request: 'https://xueshu.baidu.com/s?wd=',
         },
       ],
-      text: "",
-      placeholder: "",
-      request: "",
-    };
+      text: '',
+      placeholder: '',
+      request: '',
+    }
   },
   created() {
     if (process.client) {
-      const theme = localStorage.getItem("theme");
-      if (theme === "theme-white") {
-        this.isActivaTheme = true;
-        this.$store.commit("setTheme", "theme-white");
+      const theme = localStorage.getItem('theme')
+      if (theme === 'theme-white') {
+        this.isActivaTheme = true
+        this.$store.commit('setTheme', 'theme-white')
       } else {
-        this.$store.commit("setTheme", "theme-black");
-        this.isActivaTheme = false;
+        this.$store.commit('setTheme', 'theme-black')
+        this.isActivaTheme = false
       }
     }
   },
   mounted() {
     if (process.client) {
-      const index = JSON.parse(localStorage.getItem("index"));
-      console.log(index);
+      const index = JSON.parse(localStorage.getItem('index'))
+      console.log(index)
       if (index === null) {
-        this.changeSearchMode(0);
+        this.changeSearchMode(0)
       } else {
-        this.changeSearchMode(index);
+        this.changeSearchMode(index)
       }
     }
   },
   methods: {
+    /**
+     * @name handleRefresh 处理刷新
+     */
+    handleRefresh() {
+      if (process.client) {
+        window.location.reload()
+      }
+    },
     handleSd() {
       this.$notify({
-        message: "🎅  祝你圣诞快乐呀！～",
-        position:'top-left'
-      });
+        message: '🎅  祝你圣诞快乐呀！～',
+        position: 'top-left',
+      })
     },
     /**
      * @name changeTheme 切换主题
      */
     changeTheme() {
       const className = document
-        .querySelector("#layout-container")
-        .getAttribute("class");
-      console.log("className", className);
-      if (className === "theme-white") {
-        this.$store.commit("setTheme", "theme-black");
-        this.isActivaTheme = false;
+        .querySelector('#layout-container')
+        .getAttribute('class')
+      console.log('className', className)
+      if (className === 'theme-white') {
+        this.$store.commit('setTheme', 'theme-black')
+        this.isActivaTheme = false
       } else {
-        this.$store.commit("setTheme", "theme-white");
-        this.isActivaTheme = true;
+        this.$store.commit('setTheme', 'theme-white')
+        this.isActivaTheme = true
       }
     },
     /**
      * @name changeSearchMode 改变搜索方式
      */
     changeSearchMode(index) {
-      console.log(index);
+      console.log(index)
       this.list.map((e, i) => {
-        e.isActiva = false;
+        e.isActiva = false
         if (i === index && process.client) {
-          e.isActiva = true;
-          this.placeholder = e.placeholder;
-          this.request = e.request;
-          this.$refs["searchBox"].focus();
-          localStorage.setItem("index", JSON.stringify(index));
+          e.isActiva = true
+          this.placeholder = e.placeholder
+          this.request = e.request
+          this.$refs['searchBox'].focus()
+          localStorage.setItem('index', JSON.stringify(index))
         }
-      });
+      })
     },
     /**
      * @name handleSeacrch 处理搜索
      */
     handleSeacrch() {
-      window.open(this.request + this.text);
+      window.open(this.request + this.text)
     },
   },
-};
+}
 </script>
 <style scoped lang="less">
 .theme(@bg-color,@theme-color,@font-color,@color-activa,@link-activa) {
@@ -177,6 +177,38 @@ export default {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    > div:nth-child(1) {
+      width: 100px;
+      height: 100px;
+      text-align: center;
+      line-height: 100px;
+      position: relative;
+      transform: rotate(0deg);
+      transition: 0.6s all;
+      .icon {
+        font-size: 32px;
+        cursor: pointer;
+      }
+
+      .icon-shuaxin:hover {
+        transform: rotate(180deg);
+        // font-size: 100px;
+      }
+      .icon-shuaxin-active {
+        color: #fff;
+      }
+      img {
+        position: absolute;
+        top: 50%;
+        left: 0%;
+        width: 50px;
+        transform: translate(-50%, -50%);
+      }
+    }
+    > div:nth-child(1):hover {
+      transform: rotate(360deg);
+    }
+
     > div:nth-child(2) {
       width: 100px;
       height: 100px;

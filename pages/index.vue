@@ -25,7 +25,7 @@ import Common from "../components/Common";
 export default {
   head() {
     return {
-      title: "导航网站-咚咚宇宙",
+      title: "叮咚导航 - 咚咚宇宙",
     };
   },
   data() {

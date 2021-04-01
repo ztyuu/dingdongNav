@@ -12,19 +12,14 @@
           </div>
         </div>
         <div class="info-content">
-          <div
-            class="top-list"
-            v-for="(itme, index) in platform.list"
-            :key="itme.id"
-          >
+          <div class="top-list" v-for="(itme, index) in platform.list" :key="itme.id">
             <span :class="{ 'index-color': index + 1 < 4 }">{{
               index + 1
             }}</span>
             <span>
               <a :href="itme.url" target="_blank" rel="noopener noreferrer">{{
                 itme.title
-              }}</a></span
-            >
+              }}</a></span>
             <span></span>
           </div>
         </div>
@@ -34,12 +29,12 @@
 </template>
 
 <script>
-import { getHotTopipTop } from "../../api/hot-topic";
+import { getHotTopipTop } from '../../api/hot-topic'
 export default {
   head() {
     return {
-      title: "导航网站-咚咚宇宙",
-    };
+      title: '叮咚导航-咚咚宇宙',
+    }
   },
   data() {
     return {
@@ -47,104 +42,104 @@ export default {
         {
           id: 1,
           logoUrl:
-            "https://file.ipadown.com/tophub/assets/images/media/s.weibo.com.png_50x50.png",
-          name: "微博",
-          description: "热搜榜",
+            'https://file.ipadown.com/tophub/assets/images/media/s.weibo.com.png_50x50.png',
+          name: '微博',
+          description: '热搜榜',
           list: [],
         },
         {
           id: 6,
           logoUrl:
-            "https://file.ipadown.com/tophub/assets/images/media/zhihu.com.png_50x50.png",
-          name: "知乎",
-          description: "热榜",
+            'https://file.ipadown.com/tophub/assets/images/media/zhihu.com.png_50x50.png',
+          name: '知乎',
+          description: '热榜',
           list: [],
         },
         {
           id: 2,
           logoUrl:
-            "https://file.ipadown.com/tophub/assets/images/media/baidu.com.png_50x50.png",
-          name: "百度",
-          description: "实时热点",
+            'https://file.ipadown.com/tophub/assets/images/media/baidu.com.png_50x50.png',
+          name: '百度',
+          description: '实时热点',
           list: [],
         },
         {
           id: 5,
           logoUrl:
-            "https://file.ipadown.com/tophub/assets/images/media/mp.weixin.qq.com.png_50x50.png",
-          name: "微信",
-          description: "24h热文榜",
+            'https://file.ipadown.com/tophub/assets/images/media/mp.weixin.qq.com.png_50x50.png',
+          name: '微信',
+          description: '24h热文榜',
           list: [],
         },
         {
           id: 221,
           logoUrl:
-            "https://file.ipadown.com/tophub/assets/images/media/iesdouyin.com.png_50x50.png",
-          name: "抖音",
-          description: "视频榜",
+            'https://file.ipadown.com/tophub/assets/images/media/iesdouyin.com.png_50x50.png',
+          name: '抖音',
+          description: '视频榜',
           list: [],
         },
         {
           id: 19,
           logoUrl:
-            "https://file.ipadown.com/tophub/assets/images/media/bilibili.com.png_50x50.png",
-          name: "哔哩哔哩",
-          description: "24h热文榜",
+            'https://file.ipadown.com/tophub/assets/images/media/bilibili.com.png_50x50.png',
+          name: '哔哩哔哩',
+          description: '24h热文榜',
           list: [],
         },
         {
           id: 26,
           logoUrl:
-            "https://file.ipadown.com/tophub/assets/images/media/douban.com.png_50x50.png",
-          name: "豆瓣小组",
-          description: "讨论精选",
+            'https://file.ipadown.com/tophub/assets/images/media/douban.com.png_50x50.png',
+          name: '豆瓣小组',
+          description: '讨论精选',
           list: [],
         },
         {
           id: 72,
           logoUrl:
-            "https://file.ipadown.com/tophub/assets/images/media/jandan.net.png_50x50.png",
-          name: "煎蛋",
-          description: "24H热文",
+            'https://file.ipadown.com/tophub/assets/images/media/jandan.net.png_50x50.png',
+          name: '煎蛋',
+          description: '24H热文',
           list: [],
         },
         {
           id: 11,
           logoUrl:
-            "https://file.ipadown.com/tophub/assets/images/media/36kr.com.png_50x50.png",
-          name: "36氪",
-          description: "24H热榜",
+            'https://file.ipadown.com/tophub/assets/images/media/36kr.com.png_50x50.png',
+          name: '36氪',
+          description: '24H热榜',
           list: [],
         },
         {
           id: 137,
           logoUrl:
-            "https://file.ipadown.com/tophub/assets/images/media/sspai.com.png_50x50.png",
-          name: "少数派",
-          description: "热门文章",
+            'https://file.ipadown.com/tophub/assets/images/media/sspai.com.png_50x50.png',
+          name: '少数派',
+          description: '热门文章',
           list: [],
         },
         {
           id: 32,
           logoUrl:
-            "https://file.ipadown.com/tophub/assets/images/media/huxiu.com.png_50x50.png",
-          name: "虎嗅网",
-          description: "热文",
+            'https://file.ipadown.com/tophub/assets/images/media/huxiu.com.png_50x50.png',
+          name: '虎嗅网',
+          description: '热文',
           list: [],
         },
         {
           id: 119,
           logoUrl:
-            "https://file.ipadown.com/tophub/assets/images/media/ithome.com.png_50x50.png",
-          name: "IT之家",
-          description: "日榜",
+            'https://file.ipadown.com/tophub/assets/images/media/ithome.com.png_50x50.png',
+          name: 'IT之家',
+          description: '日榜',
           list: [],
         },
       ],
-    };
+    }
   },
   created() {
-    this.getData();
+    this.getData()
   },
   methods: {
     /**
@@ -152,12 +147,12 @@ export default {
      */
     getData() {
       this.listData.map(async (e) => {
-        const result = await getHotTopipTop(e.id);
-        e.list = result.data;
-      });
+        const result = await getHotTopipTop(e.id)
+        e.list = result.data
+      })
     },
   },
-};
+}
 </script>
 
 <style scoped lang="less">
