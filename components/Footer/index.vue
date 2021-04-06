@@ -35,6 +35,7 @@ export default {
     opacity: 0.35;
     font-size: 12px;
     justify-content: space-between;
+    color: @font-color;
     a {
       color: inherit;
       text-decoration: none;
