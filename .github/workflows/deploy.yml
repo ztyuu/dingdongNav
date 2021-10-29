@@ -1,4 +1,4 @@
-name: Deploy NeteaseMusic
+name: Deploy DingDongNav
 on:
   push:
     branches:
