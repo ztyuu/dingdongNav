@@ -1,6 +1,5 @@
 rm -rf dist
-tsc
-vite build
+npm run build
 cd dist
 touch .static
 git init
