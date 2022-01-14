@@ -15,7 +15,7 @@
     "export": "nuxt export",
     "serve": "nuxt serve",
     "generate": "nuxt generate",
-    "deploy": "deploy prod"
+    "deploy": "npm run build && sh deploy.sh"
   },
   "dependencies": {
     "@babel/core": "7.15.8",
