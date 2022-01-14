@@ -13,7 +13,7 @@ import axios from "axios";
 
 // create an axios instance
 const service = axios.create({
-  baseURL: "//api.dingdong.ztyuu.com/api/v1", // url = base url + request url
+  baseURL: "//api.dongdong.ztyuu.com/api/v1", // url = base url + request url
   timeout: 600000, // 请求超时
 });
 
