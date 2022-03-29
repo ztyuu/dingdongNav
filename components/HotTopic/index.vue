@@ -1,10 +1,12 @@
 <template>
   <div class="hot-list">
     <ul>
-      <li v-for="platform in listData" :key="platform.name">
+      <li v-for="platform in listData"
+          :key="platform.name">
         <div class="tab">
           <div>
-            <img :src="platform.logoUrl" alt="" />
+            <img :src="platform.logoUrl"
+                 alt="" />
             <span>{{ platform.name }}</span>
           </div>
           <div>
@@ -12,12 +14,16 @@
           </div>
         </div>
         <div class="info-content">
-          <div class="top-list" v-for="(itme, index) in platform.list" :key="itme.id">
+          <div class="top-list"
+               v-for="(itme, index) in platform.list"
+               :key="itme.id">
             <span :class="{ 'index-color': index + 1 < 4 }">{{
               index + 1
             }}</span>
             <span>
-              <a :href="itme.url" target="_blank" rel="noopener noreferrer">{{
+              <a :href="itme.url"
+                 target="_blank"
+                 rel="noopener noreferrer">{{
                 itme.title
               }}</a></span>
             <span></span>
@@ -31,12 +37,12 @@
 <script>
 import { getHotTopipTop } from '../../api/hot-topic'
 export default {
-  head() {
+  head () {
     return {
       title: '叮咚导航-咚咚宇宙',
     }
   },
-  data() {
+  data () {
     return {
       listData: [
         {
@@ -88,11 +94,11 @@ export default {
           list: [],
         },
         {
-          id: 26,
+          id: 42,
           logoUrl:
-            'https://file.ipadown.com/tophub/assets/images/media/douban.com.png_50x50.png',
-          name: '豆瓣小组',
-          description: '讨论精选',
+            'https://file.ipadown.com/tophub/assets/images/media/bbs.hupu.com.png_50x50.png',
+          name: '虎扑社区',
+          description: '步行街热榜',
           list: [],
         },
         {
@@ -135,17 +141,112 @@ export default {
           description: '日榜',
           list: [],
         },
+        {
+          id: 46,
+          logoUrl:
+            'https://file.ipadown.com/tophub/assets/images/media/bbs.tianya.cn.png_50x50.png',
+          name: '天涯',
+          description: '热帖版',
+          list: [],
+        },
+        {
+          id: 68,
+          logoUrl:
+            'https://file.ipadown.com/tophub/assets/images/media/52pojie.cn.png_50x50.png',
+          name: '吾爱破解',
+          description: '今日热帖',
+          list: [],
+        },
+        {
+          id: 3,
+          logoUrl:
+            'https://file.ipadown.com/tophub/assets/images/media/tieba.baidu.com.png_50x50.png',
+          name: '百度贴吧',
+          description: '热议榜',
+          list: [],
+        },
+        {
+          id: 20,
+          logoUrl:
+            'https://file.ipadown.com/tophub/assets/images/media/acfun.cn.png_50x50.png',
+          name: 'AcFun',
+          description: '排行榜',
+          list: [],
+        }, {
+          id: 54,
+          logoUrl:
+            'https://file.ipadown.com/tophub/assets/images/media/github.com.png_50x50.png',
+          name: 'Github',
+          description: 'Trending Today',
+          list: [],
+        },
+        {
+          id: 267,
+          logoUrl:
+            'https://file.ipadown.com/tophub/assets/images/media/bbs.csdn.net.png_50x50.png',
+          name: 'CSDN论坛',
+          description: '技术区热帖',
+          list: [],
+        },
+        {
+          id: 100,
+          logoUrl:
+            'https://file.ipadown.com/tophub/assets/images/media/juejin.im.png_50x50.png',
+          name: '掘金',
+          description: '全站本周最热',
+          list: [],
+        },
+        {
+          id: 132,
+          logoUrl:
+            'https://file.ipadown.com/tophub/assets/images/media/toutiao.io.png_50x50.png',
+          name: '开发者头条',
+          description: '今日头条',
+          list: [],
+        },
+        {
+          id: 62,
+          logoUrl:
+            'https://file.ipadown.com/tophub/assets/images/media/itunes.apple.com.png_50x50.png',
+          name: 'App Store',
+          description: '中国区iPhone免费榜',
+          list: [],
+        },
+        {
+          id: 2429,
+          logoUrl:
+            'https://file.ipadown.com/tophub/assets/images/media/ifanr.com.png_50x50.png',
+          name: '爱范儿',
+          description: 'AppSolution',
+          list: [],
+        },
+        {
+          id: 392,
+          logoUrl:
+            'https://file.ipadown.com/tophub/assets/images/media/zuimeia.com.png_50x50.png',
+          name: '最美应用',
+          description: '每日最美',
+          list: [],
+        },
+        {
+          id: 3510,
+          logoUrl:
+            'https://file.ipadown.com/tophub/assets/images/media/app.so.png_50x50.png',
+          name: 'App So',
+          description: '鲜面连线',
+          list: [],
+        },
       ],
     }
   },
-  created() {
+  created () {
     this.getData()
   },
   methods: {
     /**
      * @name getData 获取数据
      */
-    getData() {
+    getData () {
       this.listData.map(async (e) => {
         const result = await getHotTopipTop(e.id)
         e.list = result.data
