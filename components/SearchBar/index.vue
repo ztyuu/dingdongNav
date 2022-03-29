@@ -14,19 +14,28 @@
             'icon',
             'iconfont',
             isActivaTheme ? 'icon-taiyang' : 'icon-yueliang',
-          ]" @click="changeTheme"></i>
+          ]"
+           @click="changeTheme"></i>
       </div>
     </div>
     <div class="headline-content">
       <div class="tab-nav">
         <ul>
-          <li :class="{ activa: item.isActiva }" v-for="(item, index) in list" :key="item.id" @click="changeSearchMode(index)">
+          <li :class="{ activa: item.isActiva }"
+              v-for="(item, index) in list"
+              :key="item.id"
+              @click="changeSearchMode(index)">
             {{ item.name }}
           </li>
         </ul>
       </div>
       <div class="input-box">
-        <input type="text" ref="searchBox" autofocus="autofocus" v-model="text" :placeholder="placeholder" @keyup.enter="handleSeacrch" />
+        <input type="text"
+               ref="searchBox"
+               autofocus="autofocus"
+               v-model="text"
+               :placeholder="placeholder"
+               @keyup.enter="handleSeacrch" />
         <div @click="handleSeacrch">搜索</div>
       </div>
     </div>
@@ -35,7 +44,7 @@
 <script>
 import Cookies from 'js-cookie'
 export default {
-  data() {
+  data () {
     return {
       isActivaTheme: true,
       list: [
@@ -87,19 +96,19 @@ export default {
       request: '',
     }
   },
-  created() {
+  created () {
     if (process.client) {
       const theme = localStorage.getItem('theme')
-      if (theme === 'theme-white') {
-        this.isActivaTheme = true
-        this.$store.commit('setTheme', 'theme-white')
-      } else {
+      if (theme === 'theme-black') {
         this.$store.commit('setTheme', 'theme-black')
         this.isActivaTheme = false
+      } else {
+        this.isActivaTheme = true
+        this.$store.commit('setTheme', 'theme-white')
       }
     }
   },
-  mounted() {
+  mounted () {
     if (process.client) {
       const index = JSON.parse(localStorage.getItem('index'))
       console.log(index)
@@ -114,12 +123,12 @@ export default {
     /**
      * @name handleRefresh 处理刷新
      */
-    handleRefresh() {
+    handleRefresh () {
       if (process.client) {
         window.location.reload()
       }
     },
-    handleSd() {
+    handleSd () {
       this.$notify({
         message: '🎅  祝你圣诞快乐呀！～',
         position: 'top-left',
@@ -128,7 +137,7 @@ export default {
     /**
      * @name changeTheme 切换主题
      */
-    changeTheme() {
+    changeTheme () {
       const className = document
         .querySelector('#layout-container')
         .getAttribute('class')
@@ -144,7 +153,7 @@ export default {
     /**
      * @name changeSearchMode 改变搜索方式
      */
-    changeSearchMode(index) {
+    changeSearchMode (index) {
       console.log(index)
       this.list.map((e, i) => {
         e.isActiva = false
@@ -160,7 +169,7 @@ export default {
     /**
      * @name handleSeacrch 处理搜索
      */
-    handleSeacrch() {
+    handleSeacrch () {
       window.open(this.request + this.text)
     },
   },
