@@ -12,7 +12,7 @@ import request from "@/utils/request";
  */
 export function getHotTopipTop(id) {
   return request({
-    url: `/getData/${id}`,
+    url: `/getData?id=${id}`,
     method: "get"
   });
 }
