@@ -47,6 +47,10 @@ export default {
         "data-ad-client": "ca-pub-5555974233935892",
         async: 1,
         src: "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+      },
+      {
+        async: 1,
+        src: "https://www.googletagmanager.com/gtag/js?id=UA-122570015-1"
       }
     ],
     link: [

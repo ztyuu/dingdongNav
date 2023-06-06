@@ -35,10 +35,15 @@ export default {
       componentName: "",
     };
   },
-  created(){
+  created() {
     if (new Date().getTime() < 1608912000000) {
       this.show = true
     }
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-122570015-1');
   },
   methods: {
     /**
@@ -61,6 +66,7 @@ export default {
 .fade-leave-active {
   transition: opacity 0.5s;
 }
+
 .fade-enter,
 .fade-leave-to {
   opacity: 0;
@@ -71,19 +77,22 @@ export default {
   box-shadow: 0 0 4px 3px rgba(0, 0, 0, 0.05);
 }
 
-.theme(@bg-color,@theme-color,@font-color,@color-activa,@link-activa) {
+.theme(@bg-color, @theme-color, @font-color, @color-activa, @link-activa) {
   .index {
     background-color: @bg-color;
   }
+
   a {
     text-decoration: none;
     color: @font-color;
     transition: all 0.2s;
   }
+
   a:hover {
     color: #00a1ee;
   }
 }
+
 .setTheme();
 </style>
 
