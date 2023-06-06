@@ -44,6 +44,8 @@ export default {
     gtag('js', new Date());
 
     gtag('config', 'UA-122570015-1');
+
+    gtag('config', 'G-3TLF7Z2V2V');
   },
   methods: {
     /**

@@ -51,6 +51,10 @@ export default {
       {
         async: 1,
         src: "https://www.googletagmanager.com/gtag/js?id=UA-122570015-1"
+      },
+      {
+        async: 1,
+        src: "https://www.googletagmanager.com/gtag/js?id=G-3TLF7Z2V2V"
       }
     ],
     link: [
