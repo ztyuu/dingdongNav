@@ -1,0 +1,29 @@
+{
+  "manifest_version": 2,
+  "name": "叮咚导航",
+  "version": "1.0",
+  "description": "叮咚导航，为您提供便捷的网站导航服务，轻松快速找到您所需的各类网页资源，让上网体验更简单畅快。",
+  "chrome_url_overrides": {
+    "newtab": "dist/index.html"
+  },
+  "permissions": [
+    "activeTab"
+  ],
+  "browser_action": {
+    "permissions": [
+      "tabs",
+      "activeTab"
+    ],
+    "default_icon": {
+      "16": "static/nuxt-icon.png",
+      "48": "static/nuxt-icon.png",
+      "128": "static/nuxt-icon.png"
+    },
+    "default_popup": "popup.html"
+  },
+  "icons": {
+    "16": "static/nuxt-icon.png",
+    "48": "static/nuxt-icon.png",
+    "128": "static/nuxt-icon.png"
+  }
+}
