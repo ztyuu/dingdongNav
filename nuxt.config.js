@@ -43,6 +43,12 @@ export default {
     ],
     script: [
       {
+        // 谷歌AdSense
+        crossorigin: "anonymous",
+        async: 1,
+        src: "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5555974233935892"
+      },
+      {
         // 谷歌广告代码
         "data-ad-client": "ca-pub-5555974233935892",
         async: 1,
